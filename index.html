@@ -28,11 +28,12 @@
         <div class="pronounce">meMO / mee-moh</div>
         <div class="cover-copy">
           <p class="eyebrow">Medical Engineering Modeling Ontology</p>
-          <h1>Safety evidence should survive system change<span>.</span></h1>
+          <h1>Safety evidence should stay true when the system changes<span>.</span></h1>
           <p>
-            MEMO is an architecture-centered evidence backbone for medical
-            device software: typed safety meaning, computable checks, and
-            reviewable model views.
+            Medical device teams can change code, configuration, interfaces,
+            or behavior faster than the safety case can be manually reconciled.
+            MEMO turns that reconciliation problem into a versioned model:
+            typed safety meaning, computable checks, and reviewable views.
           </p>
         </div>
       </section>
@@ -40,21 +41,21 @@
       <section class="problem">
         <div class="problem-copy">
           <p class="eyebrow">The problem</p>
-          <h2>Evidence drifts when engineering work is split across tools.</h2>
+          <h2>The safety case fails quietly when evidence loses context.</h2>
           <p>
             Risk files, requirements, architecture notes, tests, reviews, and
             release records often change on different cadences. After a code,
             configuration, interface, or behavior change, teams must still
-            explain what changed, what it can affect, and which evidence must
-            be refreshed.
+            defend one complete thread: what changed, what it can affect, where
+            the control is implemented, and which evidence is still fresh.
           </p>
         </div>
         <div class="evidence-map" aria-label="Evidence drift map">
           <div class="map-title">Evidence thread under change</div>
-          <div class="map-row"><b>Intended use</b><span>assumptions shift</span></div>
-          <div class="map-row"><b>Risk control</b><span>allocation unclear</span></div>
-          <div class="map-row"><b>Architecture</b><span>interfaces evolve</span></div>
-          <div class="map-row"><b>Verification</b><span>coverage goes stale</span></div>
+          <div class="map-row"><b>Intended use</b><span>assumptions and operating context shift</span></div>
+          <div class="map-row"><b>Risk control</b><span>paper controls need concrete allocation</span></div>
+          <div class="map-row"><b>Architecture</b><span>interfaces, modes, timing, and behavior evolve</span></div>
+          <div class="map-row"><b>Verification</b><span>coverage and acceptance criteria can go stale</span></div>
           <div class="map-callout">The review question: what evidence is still valid?</div>
         </div>
       </section>

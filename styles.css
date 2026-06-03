@@ -426,6 +426,67 @@ h1 span {
   line-height: 1.42;
 }
 
+.technical-section {
+  margin-top: 72px;
+  padding-top: 44px;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  max-width: 860px;
+}
+
+.section-title h2 {
+  color: var(--ink);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.technical-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.technical-grid article {
+  min-height: 210px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+}
+
+.technical-grid article:nth-child(2) {
+  background: var(--teal-soft);
+  border-color: #9bded5;
+}
+
+.technical-grid article:nth-child(3) {
+  background: var(--blue-soft);
+  border-color: #acd0ec;
+}
+
+.technical-grid article:nth-child(4) {
+  background: var(--purple-soft);
+  border-color: #cfc2fb;
+}
+
+.technical-grid h3 {
+  color: var(--ink);
+  font-size: 1.14rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.technical-grid p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.38;
+}
+
 @media (max-width: 920px) {
   main {
     box-shadow: none;
@@ -440,7 +501,8 @@ h1 span {
 
   .problem,
   .abc,
-  .detail-grid {
+  .detail-grid,
+  .technical-grid {
     grid-template-columns: 1fr;
   }
 }
