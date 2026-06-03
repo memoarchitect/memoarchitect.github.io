@@ -16,7 +16,7 @@
         <img src="assets/logo.svg" alt="" width="34" height="31">
         <span>MEMO</span>
       </a>
-      <nav aria-label="Repository links">
+      <nav aria-label="Primary navigation">
         <a href="memo.html">memo</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
@@ -24,33 +24,55 @@
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">Medical Engineering Modeling Ontology</p>
-        <h1 id="hero-title">Safety evidence should not decay every time the system changes.</h1>
-        <p class="lede">
-          MEMO is a small open framework for keeping medical-device safety claims,
-          architecture, risk controls, and verification evidence aligned in a
-          versioned model.
-        </p>
+      <section class="cover">
+        <div class="pronounce">meMO / mee-moh</div>
+        <div class="cover-copy">
+          <p class="eyebrow">Medical Engineering Modeling Ontology</p>
+          <h1>Safety evidence should survive system change<span>.</span></h1>
+          <p>
+            MEMO is an architecture-centered evidence backbone for medical
+            device software: typed safety meaning, computable checks, and
+            reviewable model views.
+          </p>
+        </div>
       </section>
 
-      <section class="pillars" aria-label="MEMO pillars">
-        <a class="pillar" href="memo.html">
-          <span>A</span>
-          <small>Specification</small>
-          <h2>MEMO</h2>
+      <section class="problem">
+        <div class="problem-copy">
+          <p class="eyebrow">The problem</p>
+          <h2>Evidence drifts when engineering work is split across tools.</h2>
+          <p>
+            Risk files, requirements, architecture notes, tests, reviews, and
+            release records often change on different cadences. After a code,
+            configuration, interface, or behavior change, teams must still
+            explain what changed, what it can affect, and which evidence must
+            be refreshed.
+          </p>
+        </div>
+        <div class="evidence-map" aria-label="Evidence drift map">
+          <div class="map-title">Evidence thread under change</div>
+          <div class="map-row"><b>Intended use</b><span>assumptions shift</span></div>
+          <div class="map-row"><b>Risk control</b><span>allocation unclear</span></div>
+          <div class="map-row"><b>Architecture</b><span>interfaces evolve</span></div>
+          <div class="map-row"><b>Verification</b><span>coverage goes stale</span></div>
+          <div class="map-callout">The review question: what evidence is still valid?</div>
+        </div>
+      </section>
+
+      <section class="abc" aria-label="MEMO pillars">
+        <a class="split-card" href="memo.html">
+          <small>A | Evidence specification</small>
+          <h3>MEMO</h3>
           <p>Ontology, methodology, safety-thread semantics, closure rules, and reference patterns.</p>
         </a>
-        <a class="pillar" href="memo-tools.html">
-          <span>B</span>
-          <small>Runtime</small>
-          <h2>MEMO Tools</h2>
+        <a class="split-card" href="memo-tools.html">
+          <small>B | Runtime</small>
+          <h3>MEMO Tools</h3>
           <p>Parser, validation, trace checks, CLI workflows, imports, exports, and artifact generation.</p>
         </a>
-        <a class="pillar" href="memo-architect.html">
-          <span>C</span>
-          <small>Workbench</small>
-          <h2>MEMO Architect</h2>
+        <a class="split-card" href="memo-architect.html">
+          <small>C | Workbench</small>
+          <h3>MEMO Architect</h3>
           <p>A focused UI for exploring the model, reviewing gaps, and preparing evidence.</p>
         </a>
       </section>
