@@ -13,63 +13,46 @@
   <body>
     <header class="topbar">
       <a class="brand" href="/" aria-label="MEMO home">
-        <img src="assets/logo.svg" alt="" width="36" height="32">
+        <img src="assets/logo.svg" alt="" width="34" height="31">
         <span>MEMO</span>
       </a>
-      <nav aria-label="Primary navigation">
-        <a href="#problem">Problem</a>
-        <a href="#system">A | B | C</a>
-        <a href="#repos">Repos</a>
+      <nav aria-label="Repository links">
+        <a href="https://github.com/memoarchitect/memo">memo</a>
+        <a href="https://github.com/memoarchitect/memo-tools">tools</a>
+        <a href="https://github.com/memoarchitect/memo-architect">architect</a>
       </nav>
     </header>
 
     <main>
-      <section id="problem" class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <p class="eyebrow">Medical Engineering Modeling Ontology</p>
-        <h1>Medical device safety evidence drifts when systems change.</h1>
+        <h1 id="hero-title">Safety evidence should not decay every time the system changes.</h1>
         <p class="lede">
-          Requirements, risk controls, architecture, behavior, tests, and DHF
-          records often live in different tools. After a software or
-          configuration change, teams still need to answer one hard question:
-          what evidence is still valid?
+          MEMO is a small open framework for keeping medical-device safety claims,
+          architecture, risk controls, and verification evidence aligned in a
+          versioned model.
         </p>
       </section>
 
-      <section id="system" class="abc" aria-label="MEMO system">
-        <article>
+      <section class="pillars" aria-label="MEMO pillars">
+        <a class="pillar" href="https://github.com/memoarchitect/memo">
           <span>A</span>
-          <small>Evidence specification</small>
+          <small>Specification</small>
           <h2>MEMO</h2>
-          <p>
-            A medical-device ontology and methodology for typed safety threads:
-            hazards, controls, requirements, architecture, behavior, and
-            verification.
-          </p>
-        </article>
-        <article>
+          <p>Ontology, methodology, safety-thread semantics, closure rules, and reference patterns.</p>
+        </a>
+        <a class="pillar" href="https://github.com/memoarchitect/memo-tools">
           <span>B</span>
-          <small>Model runtime</small>
+          <small>Runtime</small>
           <h2>MEMO Tools</h2>
-          <p>
-            Parser, validation, closure checks, imports, exports, CLI workflows,
-            and deterministic artifact generation from baselined model sources.
-          </p>
-        </article>
-        <article>
+          <p>Parser, validation, trace checks, CLI workflows, imports, exports, and artifact generation.</p>
+        </a>
+        <a class="pillar" href="https://github.com/memoarchitect/memo-architect">
           <span>C</span>
           <small>Workbench</small>
           <h2>MEMO Architect</h2>
-          <p>
-            A focused UI for exploring the model, reviewing traceability,
-            inspecting gaps, and preparing evidence for engineering review.
-          </p>
-        </article>
-      </section>
-
-      <section id="repos" class="repos">
-        <a href="https://github.com/memoarchitect/memo">github.com/memoarchitect/memo</a>
-        <a href="https://github.com/memoarchitect/memo-tools">github.com/memoarchitect/memo-tools</a>
-        <a href="https://github.com/memoarchitect/memo-architect">github.com/memoarchitect/memo-architect</a>
+          <p>A focused UI for exploring the model, reviewing gaps, and preparing evidence.</p>
+        </a>
       </section>
     </main>
   </body>
