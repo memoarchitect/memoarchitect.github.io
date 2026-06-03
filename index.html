@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MEMO | Medical Engineering Modeling Ontology</title>
+    <meta
+      name="description"
+      content="MEMO is an ontology-backed, SysML v2-native architecture and assurance ecosystem for software-intensive medical devices."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="MEMO home">
+        <img src="assets/logo.svg" alt="" width="38" height="35">
+        <span>MEMO</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#backbone">Evidence drift</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#mechanisms">Mechanisms</a>
+        <a href="#evidence">Workbench</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Medical Engineering Modeling Ontology</p>
+          <h1 id="hero-title">Make safety evidence resilient to change.</h1>
+          <p class="lede">
+            MEMO is an architecture-centric framework for Class B/C medical
+            device software assurance. It keeps intended use, hazards, controls,
+            requirements, architecture, behavior, V&V evidence, and released
+            baselines synchronized through ontology-backed SysML v2 models.
+          </p>
+          <div class="hero-links" aria-label="Repository links">
+            <a href="https://github.com/memoarchitect/memo">memo</a>
+            <a href="https://github.com/memoarchitect/memo-tools">memo-tools</a>
+            <a href="https://github.com/memoarchitect/memo-architect">memo-architect</a>
+          </div>
+        </div>
+
+        <aside class="hero-system" aria-label="MEMO system map">
+          <div class="system-head">
+            <small>Shared analytical model</small>
+            <strong>What changed? What can it affect? Which evidence must be revisited?</strong>
+          </div>
+          <div class="system-map">
+            <div class="map-node clinical">Clinical context</div>
+            <div class="map-node risk">Risk controls</div>
+            <div class="map-node architecture">System + software architecture</div>
+            <div class="map-node requirements">Requirements</div>
+            <div class="map-node evidence">Verification evidence</div>
+            <svg viewBox="0 0 680 360" aria-hidden="true">
+              <path d="M150 72 C250 88 302 126 340 180"></path>
+              <path d="M150 288 C248 256 302 226 340 180"></path>
+              <path d="M530 72 C430 88 378 126 340 180"></path>
+              <path d="M530 288 C432 256 378 226 340 180"></path>
+            </svg>
+          </div>
+          <div class="system-foot">
+            <span>Ontology kinds</span>
+            <span>Relationship semantics</span>
+            <span>Invariant constraints</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="backbone" class="backbone" aria-labelledby="backbone-title">
+        <div class="section-head">
+          <p class="eyebrow">The evidence decay problem</p>
+          <h2 id="backbone-title">Trace links are not enough when evidence drifts under change.</h2>
+        </div>
+        <div class="backbone-grid">
+          <article>
+            <small>Records boundary</small>
+            <h3>Controlled artifacts show relationships.</h3>
+            <p>
+              Requirements, risk files, verification results, reviews, and
+              approvals remain authoritative work products. Impact analysis
+              still needs the architecture semantics behind those links:
+              where a control is implemented, where it acts, and what it covers.
+            </p>
+          </article>
+          <article>
+            <small>Modeling boundary</small>
+            <h3>SysML is a language, not a medical-device playbook.</h3>
+            <p>
+              Teams still need layers, viewpoints, artifact conventions,
+              rule strengths, workflow, and reusable domain vocabulary before
+              the model can carry reviewer-checkable assurance meaning.
+            </p>
+          </article>
+          <article>
+            <small>Change boundary</small>
+            <h3>Code feedback stops at repository context.</h3>
+            <p>
+              Git and CI make local change visible. System-level safety impact
+              requires architecture, behavior, risk, and evidence semantics from
+              the model, tied to the exact released baseline being defended.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="pillars" class="pillars" aria-labelledby="pillars-title">
+        <div class="section-head">
+          <p class="eyebrow">Repository pillars</p>
+          <h2 id="pillars-title">Three pillars, one dependency direction.</h2>
+          <p>
+            The organization separates the evidence specification, computable
+            tool runtime, and workbench experience so each pillar can evolve at
+            the right pace.
+          </p>
+        </div>
+
+        <div class="pillar-grid">
+          <article class="pillar methodology">
+            <div class="pillar-top">
+              <span>01</span>
+              <small>Evidence specification</small>
+            </div>
+            <h3>MEMO</h3>
+            <p>
+              The domain contract: medically grounded typed entities,
+              relationship semantics, methodology scope, closure constraints,
+              artifact kinds, viewpoints, and reference patterns.
+            </p>
+            <dl>
+              <div><dt>Owns</dt><dd>Ontology, methodology, closure rules, viewpoints, reference patterns</dd></div>
+              <div><dt>Does not own</dt><dd>Parser runtime, UI state, project instances</dd></div>
+              <div><dt>Primary users</dt><dd>Methodology authors, ontology maintainers, reviewers</dd></div>
+            </dl>
+            <a class="repo-link" href="https://github.com/memoarchitect/memo">GitHub: memo</a>
+          </article>
+
+          <article class="pillar tools">
+            <div class="pillar-top">
+              <span>02</span>
+              <small>Model engine + CLI</small>
+            </div>
+            <h3>MEMO Tools</h3>
+            <p>
+              The computable backbone: SysML parser, semantic model builder,
+              registries, validation, trace-closure checks, imports, exports,
+              package commands, dev server, and versioned protocol.
+            </p>
+            <dl>
+              <div><dt>Owns</dt><dd>Core model runtime, CLI, validation, import/export, artifact compilation</dd></div>
+              <div><dt>Does not own</dt><dd>Medical ontology truth or browser workbench UX</dd></div>
+              <div><dt>Primary users</dt><dd>Automation, CI, CLI-first teams, integrations</dd></div>
+            </dl>
+            <a class="repo-link" href="https://github.com/memoarchitect/memo-tools">GitHub: memo-tools</a>
+          </article>
+
+          <article class="pillar architect">
+            <div class="pillar-top">
+              <span>03</span>
+              <small>Workbench UI</small>
+            </div>
+            <h3>MEMO Architect</h3>
+            <p>
+              The review and modeling surface: model explorer, diagram editor,
+              traceability matrix, DSM, ontology viewer, DHF workbench,
+              consistency analysis, scenario catalog, evidence freshness, and
+              guided model workflows.
+            </p>
+            <dl>
+              <div><dt>Owns</dt><dd>Workbench experience, dashboards, diagrams, review views</dd></div>
+              <div><dt>Does not own</dt><dd>CLI server, package semantics, source ontology</dd></div>
+              <div><dt>Primary users</dt><dd>Systems, software, risk, quality, and V&V engineers</dd></div>
+            </dl>
+            <a class="repo-link" href="https://github.com/memoarchitect/memo-architect">GitHub: memo-architect</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="mechanisms" class="interfaces" aria-labelledby="mechanisms-title">
+        <div class="section-head compact">
+          <p class="eyebrow">Evidence mechanisms</p>
+          <h2 id="mechanisms-title">MEMO turns drift triggers into computable obligations.</h2>
+        </div>
+        <div class="dependency-row" aria-label="Evidence mechanism flow">
+          <div>
+            <small>Typed evidence model</small>
+            <strong>Ontology + scope</strong>
+            <p>Intended use, hazards, harms, controls, requirements, architecture, behavior, scenarios, and verification evidence have explicit kinds.</p>
+          </div>
+          <span aria-hidden="true">&gt;</span>
+          <div>
+            <small>Closure + consistency</small>
+            <strong>Checkable threads</strong>
+            <p>Hazard to control to allocation to behavior step to verification becomes a reviewable, deterministic thread, not a paper-complete link chain.</p>
+          </div>
+          <span aria-hidden="true">&gt;</span>
+          <div>
+            <small>Baseline + freshness</small>
+            <strong>Delta evidence</strong>
+            <p>When assumptions, controls, allocations, flows, scenarios, or tests change, MEMO flags evidence that may be stale for the released baseline.</p>
+          </div>
+        </div>
+
+        <div class="contract-grid">
+          <article>
+            <h3>No paper controls.</h3>
+            <p>Risk controls must name where they are implemented and where they act: component, interface contract, behavioral flow step, or scenario.</p>
+          </article>
+          <article>
+            <h3>Re-verification scope becomes defensible.</h3>
+            <p>Structural and behavioral blast radius can drive targeted re-review and re-verification instead of retest-everything or test-too-little.</p>
+          </article>
+          <article>
+            <h3>Documents become compiled views.</h3>
+            <p>Safety and regulatory artifacts can be generated from baselined sources with provenance, stable identifiers, and version stamping.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="evidence" class="evidence" aria-labelledby="evidence-title">
+        <div class="section-head compact">
+          <p class="eyebrow">Product surfaces</p>
+          <h2 id="evidence-title">Review-ready views over the same model.</h2>
+        </div>
+        <div class="screen-grid">
+          <figure class="wide">
+            <img src="assets/screenshots/dhf-dashboard.png" alt="MEMO DHF dashboard showing document readiness">
+            <figcaption>DHF readiness and document coverage</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/dsm-matrix.png" alt="MEMO DSM matrix showing model dependencies">
+            <figcaption>Dependency structure matrix</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/ontology-viewer.png" alt="MEMO ontology viewer showing packages and kinds">
+            <figcaption>Ontology and methodology inspection</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
