@@ -6,158 +6,71 @@
     <title>MEMO | Medical Engineering Modeling Ontology</title>
     <meta
       name="description"
-      content="MEMO is an ontology-backed, SysML v2-native architecture and assurance framework for medical device software."
+      content="MEMO helps medical device teams keep safety evidence aligned as systems change."
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="app-header">
+    <header class="topbar">
       <a class="brand" href="/" aria-label="MEMO home">
         <img src="assets/logo.svg" alt="" width="36" height="32">
         <span>MEMO</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#platform">Platform</a>
-        <a href="#repos">Repositories</a>
-        <a href="#workbench">Workbench</a>
+        <a href="#problem">Problem</a>
+        <a href="#system">A | B | C</a>
+        <a href="#repos">Repos</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Medical Engineering Modeling Ontology</p>
-          <h1>Architecture-backed evidence for medical device software.</h1>
-          <p class="lede">
-            MEMO keeps intended use, hazards, controls, requirements,
-            architecture, behavior, and verification evidence aligned as the
-            system changes. The model is text-first, reviewable, and compiled
-            into focused engineering views.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="https://github.com/memoarchitect/memo-architect">Open MEMO Architect</a>
-            <a class="button secondary" href="#repos">View repositories</a>
-          </div>
-        </div>
-
-        <aside class="workbench-preview" aria-label="MEMO Architect preview">
-          <div class="window-title">
-            <span></span><span></span><span></span>
-            <strong>MEMO Architect</strong>
-          </div>
-          <div class="workspace">
-            <div class="sidebar">
-              <small>Model</small>
-              <b>Infusion Pump</b>
-              <a class="active">Risk Overview</a>
-              <a>Requirements Trace</a>
-              <a>Software Architecture</a>
-              <a>DHF Workbench</a>
-              <a>Verification</a>
-            </div>
-            <div class="canvas">
-              <div class="canvas-toolbar">
-                <span>Closure status</span>
-                <strong>84%</strong>
-              </div>
-              <div class="trace-grid">
-                <div><small>Hazard</small><b>Over-infusion</b></div>
-                <div><small>Control</small><b>Flow sensor alarm</b></div>
-                <div><small>Allocation</small><b>Delivery subsystem</b></div>
-                <div><small>Evidence</small><b>Flow accuracy test</b></div>
-              </div>
-              <div class="gap-row">
-                <span>2 stale evidence links</span>
-                <span>5 missing acceptance criteria</span>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <section id="platform" class="section split">
-        <div>
-          <p class="eyebrow">Why MEMO exists</p>
-          <h2>Evidence drift is a systems problem.</h2>
-        </div>
-        <p>
-          Medical device teams already maintain requirements, risk files,
-          architecture notes, tests, reviews, and release records. The hard part
-          is keeping their safety meaning synchronized after each software,
-          configuration, interface, or behavior change.
+      <section id="problem" class="hero">
+        <p class="eyebrow">Medical Engineering Modeling Ontology</p>
+        <h1>Medical device safety evidence drifts when systems change.</h1>
+        <p class="lede">
+          Requirements, risk controls, architecture, behavior, tests, and DHF
+          records often live in different tools. After a software or
+          configuration change, teams still need to answer one hard question:
+          what evidence is still valid?
         </p>
       </section>
 
-      <section class="obligations" aria-label="MEMO evidence obligations">
+      <section id="system" class="abc" aria-label="MEMO system">
         <article>
-          <span>01</span>
-          <h3>Typed evidence model</h3>
-          <p>Hazards, harms, controls, requirements, behavior, architecture, and verification evidence have explicit semantics.</p>
+          <span>A</span>
+          <small>Evidence specification</small>
+          <h2>MEMO</h2>
+          <p>
+            A medical-device ontology and methodology for typed safety threads:
+            hazards, controls, requirements, architecture, behavior, and
+            verification.
+          </p>
         </article>
         <article>
-          <span>02</span>
-          <h3>Closure rules</h3>
-          <p>Safety threads are checked for concrete allocation, behavioral anchoring, verification, and acceptance criteria.</p>
+          <span>B</span>
+          <small>Model runtime</small>
+          <h2>MEMO Tools</h2>
+          <p>
+            Parser, validation, closure checks, imports, exports, CLI workflows,
+            and deterministic artifact generation from baselined model sources.
+          </p>
         </article>
         <article>
-          <span>03</span>
-          <h3>Freshness under change</h3>
-          <p>When linked assumptions, controls, flows, scenarios, or tests change, stale evidence becomes visible early.</p>
+          <span>C</span>
+          <small>Workbench</small>
+          <h2>MEMO Architect</h2>
+          <p>
+            A focused UI for exploring the model, reviewing traceability,
+            inspecting gaps, and preparing evidence for engineering review.
+          </p>
         </article>
       </section>
 
-      <section id="repos" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Repository pillars</p>
-          <h2>Separated by responsibility.</h2>
-        </div>
-        <div class="repo-grid">
-          <article class="repo-card">
-            <small>Specification</small>
-            <h3>MEMO</h3>
-            <p>Ontology, methodology scope, closure rules, viewpoints, artifact definitions, and reference patterns.</p>
-            <a href="https://github.com/memoarchitect/memo">github.com/memoarchitect/memo</a>
-          </article>
-          <article class="repo-card">
-            <small>Runtime</small>
-            <h3>MEMO Tools</h3>
-            <p>Parser, semantic model builder, validation, imports, exports, CLI, dev server, and protocol contracts.</p>
-            <a href="https://github.com/memoarchitect/memo-tools">github.com/memoarchitect/memo-tools</a>
-          </article>
-          <article class="repo-card">
-            <small>Workbench</small>
-            <h3>MEMO Architect</h3>
-            <p>Model explorer, diagram editor, traceability matrix, DSM, DHF workbench, ontology viewer, and review dashboards.</p>
-            <a href="https://github.com/memoarchitect/memo-architect">github.com/memoarchitect/memo-architect</a>
-          </article>
-        </div>
-      </section>
-
-      <section id="workbench" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Workbench surfaces</p>
-          <h2>One model, multiple review views.</h2>
-        </div>
-        <div class="screens">
-          <figure>
-            <img src="assets/screenshots/dhf-dashboard.png" alt="MEMO DHF dashboard">
-            <figcaption>DHF readiness and document coverage</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/dsm-matrix.png" alt="MEMO DSM matrix">
-            <figcaption>Dependency structure matrix</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/ontology-viewer.png" alt="MEMO ontology viewer">
-            <figcaption>Ontology and methodology inspection</figcaption>
-          </figure>
-        </div>
+      <section id="repos" class="repos">
+        <a href="https://github.com/memoarchitect/memo">github.com/memoarchitect/memo</a>
+        <a href="https://github.com/memoarchitect/memo-tools">github.com/memoarchitect/memo-tools</a>
+        <a href="https://github.com/memoarchitect/memo-architect">github.com/memoarchitect/memo-architect</a>
       </section>
     </main>
-
-    <footer>
-      <span>MEMO</span>
-      <p>Ontology-backed architecture and assurance for medical device software.</p>
-    </footer>
   </body>
 </html>
