@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MEMO | Evidence Specification</title>
-    <meta name="description" content="MEMO ontology and methodology specification for medical device safety evidence.">
+    <title>meMO | Ontology and Methodology</title>
+    <meta name="description" content="meMO ontology and methodology specification for model-based medical device safety evidence.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="MEMO home">
+      <a class="brand" href="/" aria-label="meMO home">
         <img src="assets/logo.svg" alt="" width="34" height="31">
-        <span>MEMO</span>
+        <span>meMO</span>
       </a>
       <nav aria-label="Repository links">
-        <a href="memo.html">memo</a>
+        <a href="memo.html">meMO</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
       </nav>
@@ -23,55 +23,56 @@
     <main class="detail">
       <a class="back-link" href="/">Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow">A | Evidence specification</p>
-        <h1>MEMO defines the safety meaning behind the links.</h1>
+        <p class="eyebrow"><span class="num">01</span> Ontology and methodology</p>
+        <h1>Typed medical meaning, then predefined practice.</h1>
         <p class="lede">
-          The specification is the medical-device evidence model: typed entities,
-          allowed relationships, methodology scope, closure constraints, and
-          reference patterns that make safety threads explicit and reviewable.
+          The ontology gives every safety-relevant thing a type. The
+          methodology tells teams how to apply those types through rigor
+          profiles, ISO 42010 viewpoints, rules, workflow stages, review gates,
+          and project bindings.
         </p>
         <a class="repo-button" href="https://github.com/memoarchitect/memo">github.com/memoarchitect/memo</a>
       </section>
 
       <section class="detail-grid">
         <article>
-          <small>Typed entities</small>
-          <h2>What the model can talk about</h2>
-          <p>Intended use, assumptions, hazards, harms, risk controls, requirements, architecture elements, behavioral flows, scenarios, verification items, and evidence results.</p>
+          <small>Ontology</small>
+          <h2>Typed medical meaning</h2>
+          <p>A minimal, medically grounded SysML v2 vocabulary published in one memo:: namespace for intended use, hazards, harms, risk controls, requirements, architecture, behavior, verification, and evidence.</p>
         </article>
         <article>
-          <small>Relationship semantics</small>
-          <h2>What the links mean</h2>
-          <p>Risk controls mitigate hazards, requirements are satisfied by architecture, controls allocate to concrete locations, and verification evidence proves specific obligations.</p>
+          <small>Semantic links</small>
+          <h2>Traceability as data</h2>
+          <p>Layers do not connect by free-form arrows. Every link is a SemanticLink subtype with named roles and a status, so the linker can check the element kind on each end.</p>
         </article>
         <article>
-          <small>Closure rules</small>
-          <h2>What must be complete</h2>
-          <p>A safety thread is not complete until the control is allocated, anchored to behavior, verified with acceptance criteria, and tied to a released baseline.</p>
+          <small>Methodology</small>
+          <h2>Predefined practice</h2>
+          <p>Teams start from a working structure rather than an empty model: pick rigor, pick viewpoints, apply rules, bind the method to a project, and extend through profiles.</p>
         </article>
       </section>
 
-      <section class="technical-section">
+      <section class="technical-section" id="methodology">
         <div class="section-title">
-          <p class="eyebrow">Specification contents</p>
-          <h2>What belongs in the MEMO evidence model</h2>
+          <p class="eyebrow"><span class="num">02</span> Specification contents</p>
+          <h2>One source of truth for typed safety evidence.</h2>
         </div>
         <div class="technical-grid">
           <article>
-            <h3>Evidence vocabulary</h3>
-            <p>Intended use, operating assumptions, hazards, harms, risks, controls, requirements, components, interfaces, flows, scenarios, tests, results, baselines, and approvals.</p>
+            <h3>One namespace</h3>
+            <p>A core memo:: namespace defines the vocabulary so viewpoints, methodology, examples, and compliance mappings can build on it without forking it.</p>
           </article>
           <article>
-            <h3>Allowed thread shapes</h3>
-            <p>Hazard -> control -> allocation -> behavior step -> verification, plus requirement satisfaction and trace links where stronger semantics do not apply.</p>
+            <h3>Closure rules</h3>
+            <p>Rules can check whether high-severity controls reach allocated behavior, acceptance criteria, verification cases, and evidence nodes.</p>
           </article>
           <article>
-            <h3>Methodology scope</h3>
-            <p>Architecture layers, compliance standards, DHF artifacts, viewpoint types, workflow stages, rule severity, and terminology aliases can be selected per methodology.</p>
+            <h3>Method profiles</h3>
+            <p>Lightweight, balanced, or formal rigor profiles select viewpoints, required content, workflow stages, and review-gate exit criteria.</p>
           </article>
           <article>
             <h3>Extension points</h3>
-            <p>Programs can add profiles for alarms, cybersecurity, usability, interoperability, data messaging, product configuration, or device-specific reference patterns.</p>
+            <p>Projects add packages and methodology profiles for alarms, cybersecurity, usability, interoperability, data messaging, configuration, or device-specific patterns.</p>
           </article>
         </div>
       </section>

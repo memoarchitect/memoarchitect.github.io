@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MEMO Tools | Runtime</title>
-    <meta name="description" content="MEMO Tools parser, validation, closure checks, CLI, and artifact compilation.">
+    <title>meMO Tools | Runtime</title>
+    <meta name="description" content="meMO Tools parser, semantic graph, validation, CLI, and artifact compilation.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="MEMO home">
+      <a class="brand" href="/" aria-label="meMO home">
         <img src="assets/logo.svg" alt="" width="34" height="31">
-        <span>MEMO</span>
+        <span>meMO</span>
       </a>
       <nav aria-label="Repository links">
-        <a href="memo.html">memo</a>
+        <a href="memo.html">meMO</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
       </nav>
@@ -23,55 +23,55 @@
     <main class="detail">
       <a class="back-link" href="/">Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow">B | Model runtime</p>
-        <h1>MEMO Tools make the evidence model computable.</h1>
+        <p class="eyebrow"><span class="num">03</span> Tools</p>
+        <h1>A compiler for compliance.</h1>
         <p class="lede">
-          The runtime loads the ontology and methodology, parses project SysML,
-          builds a semantic model, evaluates closure and consistency checks, and
-          compiles reviewable outputs from baselined sources.
+          meMO Tools parse text-first SysML v2 into a semantic graph, run
+          closure and consistency rules, compute impact, and turn each change
+          into a deterministic re-review scope.
         </p>
         <a class="repo-button" href="https://github.com/memoarchitect/memo-tools">github.com/memoarchitect/memo-tools</a>
       </section>
 
       <section class="detail-grid">
         <article>
-          <small>Authoring pipeline</small>
-          <h2>Text-first model processing</h2>
-          <p>SysML v2 source remains versionable and reviewable. The tools parse it, preserve stable identifiers, and produce a model graph suitable for automation and review.</p>
+          <small>Core engine</small>
+          <h2>Parser and semantic graph</h2>
+          <p>The Langium-based core parses project models, preserves stable identifiers, resolves typed links, and builds the queryable evidence graph used by every view.</p>
         </article>
         <article>
-          <small>Change impact</small>
-          <h2>Targeted re-review scope</h2>
-          <p>Structural and behavioral blast radius can identify affected controls, scenarios, verification items, and stale evidence instead of relying on manual reconstruction.</p>
+          <small>CLI workflow</small>
+          <h2>Validate like a build</h2>
+          <p>The memo CLI supports validate, dev, build, export, import, ontology, DHF, ask, generate, and requirements workflows from the same source model.</p>
         </article>
         <article>
-          <small>Compiled artifacts</small>
-          <h2>Documents as generated views</h2>
-          <p>Safety and regulatory artifacts can be generated from model-backed templates with provenance, version stamping, baseline identity, and deterministic outputs.</p>
+          <small>Impact and DHF</small>
+          <h2>Deterministic review scope</h2>
+          <p>Structural dependencies, behavior links, scenario coverage, and verification links identify affected controls, stale evidence, and generated DHF artifacts.</p>
         </article>
       </section>
 
       <section class="technical-section">
         <div class="section-title">
-          <p class="eyebrow">Runtime responsibilities</p>
-          <h2>What the tools compute</h2>
+          <p class="eyebrow"><span class="num">04</span> Runtime responsibilities</p>
+          <h2>Review questions become executable checks.</h2>
         </div>
         <div class="technical-grid">
           <article>
-            <h3>Semantic model build</h3>
-            <p>Load ontology and methodology packages, parse project SysML, preserve stable identifiers, resolve relationships, and build a queryable evidence graph.</p>
+            <h3>Model build</h3>
+            <p>Load ontology and methodology packages, parse text-first SysML v2, resolve relationships, and produce a semantic graph.</p>
           </article>
           <article>
-            <h3>Closure and gap checks</h3>
-            <p>Find missing allocations, unverified controls, orphan requirements, ambiguous interfaces, missing acceptance criteria, and incomplete scenario coverage.</p>
+            <h3>Rule engine</h3>
+            <p>Check errors, warnings, completeness, missing allocations, unverified controls, orphan requirements, and missing acceptance criteria.</p>
           </article>
           <article>
-            <h3>Delta evidence analysis</h3>
-            <p>Use structural dependencies, behavior links, scenario coverage, and verification links to propose a defensible re-review and re-verification scope.</p>
+            <h3>Impact analysis</h3>
+            <p>Use dependencies, behavior links, scenario coverage, verification links, DSM, and DHF state to propose a defensible re-review scope.</p>
           </article>
           <article>
-            <h3>Interchange and automation</h3>
-            <p>Support import/export, JSON model output, deterministic artifact generation, CI validation, and future connectors for ALM, QMS, and test systems.</p>
+            <h3>Interchange</h3>
+            <p>Support import/export for Enterprise Architect, Cameo, OWL, CSV, JSON model output, deterministic artifact generation, and CI validation.</p>
           </article>
         </div>
       </section>

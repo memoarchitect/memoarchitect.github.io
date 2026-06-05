@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MEMO Architect | Workbench</title>
-    <meta name="description" content="MEMO Architect workbench for model review, traceability, DHF, and evidence freshness.">
+    <title>meMO Architect | Workbench</title>
+    <meta name="description" content="meMO Architect workbench for diagrams, traceability, DSM, DHF, ontology, and impact review.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="MEMO home">
+      <a class="brand" href="/" aria-label="meMO home">
         <img src="assets/logo.svg" alt="" width="34" height="31">
-        <span>MEMO</span>
+        <span>meMO</span>
       </a>
       <nav aria-label="Repository links">
-        <a href="memo.html">memo</a>
+        <a href="memo.html">meMO</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
       </nav>
@@ -23,55 +23,56 @@
     <main class="detail">
       <a class="back-link" href="/">Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow">C | Workbench</p>
-        <h1>MEMO Architect is the review surface for the model.</h1>
+        <p class="eyebrow"><span class="num">04</span> Architect</p>
+        <h1>A web app over the same model.</h1>
         <p class="lede">
-          The workbench gives engineers focused views over the same evidence
-          model: traceability, architecture, behavior, risk controls, DHF status,
-          validation gaps, and evidence freshness.
+          Architect lets non-coders review the model without editing raw files.
+          It is a view onto the code-first source of truth, not a separate copy:
+          diagrams, traceability, DSM, scenarios, ontology, impact, and DHF all
+          read from the same model.
         </p>
         <a class="repo-button" href="https://github.com/memoarchitect/memo-architect">github.com/memoarchitect/memo-architect</a>
       </section>
 
       <section class="detail-grid">
         <article>
-          <small>Model review</small>
-          <h2>Navigate the safety thread</h2>
-          <p>Explore requirements, hazards, controls, allocations, interfaces, scenarios, and tests without losing the end-to-end evidence context.</p>
+          <small>Six modes</small>
+          <h2>Review from many angles</h2>
+          <p>Catalog, Diagram, Action flow, DSM, Scenario, and Ontology modes expose different views without forking the underlying model.</p>
         </article>
         <article>
-          <small>Engineering views</small>
-          <h2>Different reviews, same model</h2>
-          <p>Diagram, traceability, DSM, ontology, DHF, consistency, and review dashboards are projections over the same source model.</p>
+          <small>Traceability</small>
+          <h2>Follow the safety thread</h2>
+          <p>Navigate requirements, hazards, controls, allocations, interfaces, behavior, verification, and evidence while preserving end-to-end context.</p>
         </article>
         <article>
-          <small>Human judgment</small>
-          <h2>Assistance, not automation of safety</h2>
-          <p>Drafting, summarization, and gap surfacing can improve throughput, while closure rules and human review remain the authority.</p>
+          <small>DHF workbench</small>
+          <h2>Surface completeness</h2>
+          <p>DHF dashboards, impact views, and gap triage help teams see stale evidence, missing acceptance criteria, and incomplete scenario coverage.</p>
         </article>
       </section>
 
       <section class="technical-section">
         <div class="section-title">
-          <p class="eyebrow">Workbench responsibilities</p>
-          <h2>What engineers need to see</h2>
+          <p class="eyebrow"><span class="num">05</span> Workbench responsibilities</p>
+          <h2>Same source of truth, lower review friction.</h2>
         </div>
         <div class="technical-grid">
           <article>
-            <h3>Traceability review</h3>
-            <p>Follow a safety thread from intended use through hazards, controls, requirements, architecture, behavior, verification, and release evidence.</p>
+            <h3>Diagrams</h3>
+            <p>Review architecture, behavior, risk, and interface diagrams built from the same source model.</p>
           </article>
           <article>
-            <h3>Gap triage</h3>
-            <p>Surface closure gaps, stale evidence, missing acceptance criteria, unallocated controls, and scenario coverage problems in the context of the model.</p>
+            <h3>Trace matrix</h3>
+            <p>Inspect links across intended use, hazards, controls, requirements, behavior, verification, and release evidence.</p>
           </article>
           <article>
-            <h3>Architecture views</h3>
-            <p>Switch between diagrams, DSM, traceability, ontology, DHF, and review dashboards without changing the underlying evidence source.</p>
+            <h3>DSM and impact</h3>
+            <p>Use dependency structure and behavior links to understand change scope before reviews and re-verification planning.</p>
           </article>
           <article>
-            <h3>Review packet preparation</h3>
-            <p>Prepare model-backed summaries for design reviews, safety reviews, DHF updates, release baselines, and targeted re-verification discussions.</p>
+            <h3>DHF dashboards</h3>
+            <p>Prepare model-backed summaries for design reviews, safety reviews, DHF updates, release baselines, and targeted re-review discussions.</p>
           </article>
         </div>
       </section>

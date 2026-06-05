@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MEMO | Medical Engineering Modeling Ontology</title>
+    <title>meMO | Medical Engineering Modeling Ontology</title>
     <meta
       name="description"
-      content="MEMO helps medical device teams keep safety evidence aligned as systems change."
+      content="meMO is a model-based evidence layer for keeping medical device safety arguments current under change."
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="MEMO home">
+      <a class="brand" href="/" aria-label="meMO home">
         <img src="assets/logo.svg" alt="" width="34" height="31">
-        <span>MEMO</span>
+        <span>meMO</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="memo.html">memo</a>
+        <a href="memo.html">meMO</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
       </nav>
@@ -28,54 +28,138 @@
         <div class="pronounce">meMO / mee-moh</div>
         <div class="cover-copy">
           <p class="eyebrow">Medical Engineering Modeling Ontology</p>
-          <h1>Safety evidence should stay true when the system changes<span>.</span></h1>
+          <h1>Model it. <span>Check it.</span><br>Keep it current.</h1>
           <p>
-            Medical device teams can change code, configuration, interfaces,
-            or behavior faster than the safety case can be manually reconciled.
-            MEMO turns that reconciliation problem into a versioned model:
-            typed safety meaning, computable checks, and reviewable views.
+            Documents remain necessary, but the safety story should be typed,
+            architecture-backed, and computable, not reconstructed before every
+            audit. meMO turns medical-device evidence into a model teams can
+            validate as the system changes.
+          </p>
+          <div class="pillline">
+            <span>open source</span>
+            <span>SysML v2</span>
+            <span>ISO 14971</span>
+            <span>IEC 62304</span>
+            <span>ISO/IEC/IEEE 42010</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-writeup" aria-labelledby="what-is-memo">
+        <div>
+          <p class="eyebrow"><span class="num">01</span> What is meMO?</p>
+          <h2 id="what-is-memo">A shared model for the safety argument.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            meMO is a way to describe medical-device safety evidence as a
+            connected engineering model instead of a pile of separate documents.
+            It gives names and structure to the things teams already reason
+            about: intended use, hazards, harms, risk controls, requirements,
+            architecture, behavior, verification, evidence, and release
+            baselines.
+          </p>
+          <p>
+            The useful part is that those relationships become checkable. A team
+            can ask whether a high-risk control is allocated to real behavior,
+            whether it has acceptance criteria and evidence, or what must be
+            re-reviewed after an interface, workflow, configuration, or software
+            change. meMO does not replace engineering judgment. It makes the
+            thread of that judgment visible, reviewable, and easier to keep
+            current.
           </p>
         </div>
       </section>
 
       <section class="problem">
         <div class="problem-copy">
-          <p class="eyebrow">The problem</p>
-          <h2>The safety case fails quietly when evidence loses context.</h2>
+          <p class="eyebrow"><span class="num">02</span> The problem</p>
+          <h2>Traced across silos, but not meaningful.</h2>
           <p>
-            Risk files, requirements, architecture notes, tests, reviews, and
-            release records often change on different cadences. After a code,
-            configuration, interface, or behavior change, teams must still
-            defend one complete thread: what changed, what it can affect, where
-            the control is implemented, and which evidence is still fresh.
+            Requirements, risk files, architecture notes, tests, DHF records,
+            reviews, and releases often change on different cadences. The issue
+            is not a lack of documents. It is missing, checkable meaning between
+            them. Linked does not mean complete.
           </p>
         </div>
         <div class="evidence-map" aria-label="Evidence drift map">
-          <div class="map-title">Evidence thread under change</div>
-          <div class="map-row"><b>Intended use</b><span>assumptions and operating context shift</span></div>
-          <div class="map-row"><b>Risk control</b><span>paper controls need concrete allocation</span></div>
-          <div class="map-row"><b>Architecture</b><span>interfaces, modes, timing, and behavior evolve</span></div>
-          <div class="map-row"><b>Verification</b><span>coverage and acceptance criteria can go stale</span></div>
-          <div class="map-callout">The review question: what evidence is still valid?</div>
+          <div class="map-title">Medical has the standards, not the model</div>
+          <div class="map-row"><b>Standards</b><span>ISO 14971, IEC 62304, ISO 13485, and ISO/IEC/IEEE 42010 define expectations</span></div>
+          <div class="map-row"><b>Artifacts</b><span>RMF, V&amp;V matrix, DHF, architecture, tests, reviews, and releases hold the evidence</span></div>
+          <div class="map-row"><b>Architecture</b><span>interfaces, modes, timing, allocation, and behavior show where safety is realized</span></div>
+          <div class="map-row"><b>Missing layer</b><span>a low-cost model that ties standards, process, and design together</span></div>
+          <div class="map-callout">The review question: what changed, and what must be re-reviewed?</div>
         </div>
       </section>
 
-      <section class="abc" aria-label="MEMO pillars">
+      <section class="architecture-core">
+        <div class="section-title">
+          <p class="eyebrow"><span class="num">03</span> Architecture at the core</p>
+          <h2>Put the safety argument where change actually happens.</h2>
+          <p>
+            meMO operationalizes a low-cost, architecture-centered model where
+            the whole chain is typed and checkable: intended use to hazards,
+            controls, requirements, architecture, behavior, verification,
+            evidence, and release baseline.
+          </p>
+        </div>
+        <div class="thread" aria-label="Closed safety thread">
+          <div class="tnode h"><small>Hazard</small><b>Overdose <span>HZ-001</span></b><em>delivery error</em></div>
+          <div class="tarrow">-&gt;</div>
+          <div class="tnode"><small>Requirement</small><b>Ignore bolus <span>REQ-025</span></b><em>source = risk</em></div>
+          <div class="tarrow">-&gt;</div>
+          <div class="tnode a"><small>Component</small><b>Infusion_Mgr <span>SW-005</span></b><em>Class C</em></div>
+          <div class="tarrow">-&gt;</div>
+          <div class="tnode c"><small>Control</small><b>Lockout <span>RC-001</span></b><em>safe design</em></div>
+          <div class="tarrow">-&gt;</div>
+          <div class="tnode v"><small>Evidence</small><b>Verified <span>EVD-001</span></b><em>tied to baseline</em></div>
+        </div>
+        <p class="note"><strong>A spreadsheet row becomes an inspectable, computable object.</strong> The RMF view, V&amp;V matrix, and impact analysis all read the same typed thread.</p>
+      </section>
+
+      <section class="abc" aria-label="meMO layers">
         <a class="split-card" href="memo.html">
-          <small>A | Evidence specification</small>
-          <h3>MEMO</h3>
-          <p>Ontology, methodology, safety-thread semantics, closure rules, and reference patterns.</p>
+          <small>Layer 01 · Ontology</small>
+          <h3>Ontology</h3>
+          <p>Typed SysML v2 elements and semantic links for hazards, harms, controls, requirements, architecture, behavior, verification, and evidence.</p>
+        </a>
+        <a class="split-card" href="memo.html#methodology">
+          <small>Layer 02 · Methodology</small>
+          <h3>Methodology</h3>
+          <p>Rigor profiles, viewpoints, rules, gates, workflow stages, and project bindings that guide how the ontology is applied.</p>
         </a>
         <a class="split-card" href="memo-tools.html">
-          <small>B | Runtime</small>
-          <h3>MEMO Tools</h3>
-          <p>Parser, validation, trace checks, CLI workflows, imports, exports, and artifact generation.</p>
+          <small>Layer 03 · Tools</small>
+          <h3>Tools</h3>
+          <p>Parser, semantic graph, rule engine, CLI workflows, import/export, DHF generation, and CI validation.</p>
         </a>
         <a class="split-card" href="memo-architect.html">
-          <small>C | Workbench</small>
-          <h3>MEMO Architect</h3>
-          <p>A focused UI for exploring the model, reviewing gaps, and preparing evidence.</p>
+          <small>Layer 04 · Architect</small>
+          <h3>Architect</h3>
+          <p>A web app over the same model for diagrams, traceability, DSM, scenarios, ontology, impact, and DHF review.</p>
         </a>
+      </section>
+
+      <section class="compile-panel">
+        <div class="section-title">
+          <p class="eyebrow"><span class="num">04</span> Compile the argument</p>
+          <h2>We compile code. We should compile the safety argument.</h2>
+          <p>With everything typed and linked, review questions become executable checks.</p>
+        </div>
+        <div class="code-panel" aria-label="memo validate example">
+<pre>$ memo validate
+
+CR-MED-001  Hazard must have >=1 risk control   (ISO 14971)
+            Missing mitigation: hazAirInLine
+
+CR-MED-003  Risk control must be verified       (ISO 14971)
+            Missing verification: rcDoorOpenAlarm
+
+CR-MED-011  SW requirement must derive from a system requirement
+            (IEC 62304)
+
+Result: 2 errors · 1 warning · thread HZ-001 closed</pre>
+        </div>
       </section>
     </main>
   </body>
