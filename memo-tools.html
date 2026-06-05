@@ -3,78 +3,127 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>meMO Tools | Runtime</title>
-    <meta name="description" content="meMO Tools parser, semantic graph, validation, CLI, and artifact compilation.">
+    <title>MEMO Tools | Parse, Check, Generate</title>
+    <meta name="description" content="MEMO Tools — Langium-based model engine and CLI for parsing, validating, and generating medical device safety artifacts.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="meMO home">
+      <a class="brand" href="/" aria-label="MEMO home">
         <img src="assets/logo.svg" alt="" width="34" height="31">
-        <span>meMO</span>
+        <span>MEMO</span>
       </a>
-      <nav aria-label="Repository links">
-        <a href="memo.html">meMO</a>
-        <a href="memo-tools.html">tools</a>
+      <nav aria-label="Primary navigation">
+        <a href="memo.html">ontology</a>
+        <a href="memo-tools.html" class="active">tools</a>
         <a href="memo-architect.html">architect</a>
+        <a href="https://memoarchitect.github.io/memo/" class="nav-docs">docs</a>
       </nav>
     </header>
 
     <main class="detail">
-      <a class="back-link" href="/">Back to overview</a>
+      <a class="back-link" href="/">&larr; Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow"><span class="num">03</span> Tools</p>
-        <h1>A compiler for compliance.</h1>
+        <p class="eyebrow">Layer 03 &middot; Tools <span class="wip-badge">Work in progress</span></p>
+        <h1>Parse, check, generate<span>.</span></h1>
         <p class="lede">
-          meMO Tools parse text-first SysML v2 into a semantic graph, run
-          closure and consistency rules, compute impact, and turn each change
-          into a deterministic re-review scope.
+          A Langium-based model engine and CLI parse text-first SysML v2 into a
+          semantic graph, then run domain rules and closure checks. Run
+          <code>memo validate</code> in CI, and each change produces a defined
+          re-review scope.
         </p>
-        <a class="repo-button" href="https://github.com/memoarchitect/memo-tools">github.com/memoarchitect/memo-tools</a>
       </section>
 
       <section class="detail-grid">
         <article>
-          <small>Core engine</small>
-          <h2>Parser and semantic graph</h2>
-          <p>The Langium-based core parses project models, preserves stable identifiers, resolves typed links, and builds the queryable evidence graph used by every view.</p>
+          <small>Model engine</small>
+          <h2>Text-first model processing</h2>
+          <p>
+            Parse SysML v2 source into a semantic graph. Preserve stable identifiers.
+            Resolve relationships. Build a queryable model suitable for automation
+            and review.
+          </p>
         </article>
         <article>
-          <small>CLI workflow</small>
-          <h2>Validate like a build</h2>
-          <p>The memo CLI supports validate, dev, build, export, import, ontology, DHF, ask, generate, and requirements workflows from the same source model.</p>
+          <small>Closure checks</small>
+          <h2>Compile the safety argument</h2>
+          <p>
+            Run native KerML closure and consistency checks &mdash; errors, warnings,
+            completeness. Find gaps before design review or audit. Make closure
+            visible to software, systems, risk, and V&V at once.
+          </p>
         </article>
         <article>
-          <small>Impact and DHF</small>
-          <h2>Deterministic review scope</h2>
-          <p>Structural dependencies, behavior links, scenario coverage, and verification links identify affected controls, stale evidence, and generated DHF artifacts.</p>
+          <small>Artifact generation</small>
+          <h2>Documents as generated views</h2>
+          <p>
+            Generate DHF artifacts. Import/export: Enterprise Architect, Cameo,
+            OWL, CSV. Safety and regulatory artifacts with provenance, version
+            stamping, and deterministic outputs.
+          </p>
         </article>
       </section>
 
       <section class="technical-section">
         <div class="section-title">
-          <p class="eyebrow"><span class="num">04</span> Runtime responsibilities</p>
-          <h2>Review questions become executable checks.</h2>
+          <p class="eyebrow">CLI commands</p>
+          <h2>What the tools compute</h2>
         </div>
-        <div class="technical-grid">
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">terminal</span>
+          </div>
+          <pre class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">cd examples/gpca-pump && memo dev</span>
+<span class="t-out">&rarr; live model + validation at localhost</span>
+
+<span class="t-prompt">$</span> <span class="t-cmd">memo validate</span>
+<span class="t-err">CR-MED-001</span>  Hazard must have &ge;1 risk control       <span class="t-dim">(ISO 14971)</span>
+            Missing mitigation: hazAirInLine
+<span class="t-err">CR-MED-003</span>  Risk control must be verified           <span class="t-dim">(ISO 14971 &sect;7.4)</span>
+            Missing verification: rcDoorOpenAlarm
+<span class="t-warn">CR-MED-004</span>  Pre-mitigation risk must be assessed    <span class="t-dim">(ISO 14971)</span>
+
+<span class="t-out">Result: 2 errors &middot; 1 warning &middot; thread HZ-001 closed</span></pre>
+        </div>
+        <div class="technical-grid" style="margin-top: 36px">
           <article>
-            <h3>Model build</h3>
-            <p>Load ontology and methodology packages, parse text-first SysML v2, resolve relationships, and produce a semantic graph.</p>
+            <h3>Semantic model build</h3>
+            <p>Load ontology and methodology packages, parse project SysML, resolve relationships, and build a queryable evidence graph.</p>
           </article>
           <article>
-            <h3>Rule engine</h3>
-            <p>Check errors, warnings, completeness, missing allocations, unverified controls, orphan requirements, and missing acceptance criteria.</p>
+            <h3>Change impact analysis</h3>
+            <p>Use structural dependencies, behavior links, and verification links to propose a defensible re-review and re-verification scope.</p>
           </article>
           <article>
-            <h3>Impact analysis</h3>
-            <p>Use dependencies, behavior links, scenario coverage, verification links, DSM, and DHF state to propose a defensible re-review scope.</p>
+            <h3>DSM &amp; DHF generation</h3>
+            <p>Generate dependency structure matrices, design history file views, and completeness dashboards from the model.</p>
           </article>
           <article>
-            <h3>Interchange</h3>
-            <p>Support import/export for Enterprise Architect, Cameo, OWL, CSV, JSON model output, deterministic artifact generation, and CI validation.</p>
+            <h3>Import &amp; export</h3>
+            <p>Enterprise Architect, Cameo, OWL, CSV. CI validation before merge or release. Future connectors for ALM, QMS, and test systems.</p>
           </article>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="" width="28" height="25">
+          <span>MEMO</span>
+        </div>
+        <div class="footer-links">
+          <a href="memo.html">Ontology</a>
+          <a href="memo-tools.html">Tools</a>
+          <a href="memo-architect.html">Architect</a>
+          <a href="https://memoarchitect.github.io/memo/">Docs</a>
+          <a href="https://github.com/memoarchitect">GitHub</a>
+        </div>
+        <div class="footer-copy">MIT License &middot; memo:: 0.2.0</div>
+      </div>
+    </footer>
   </body>
 </html>

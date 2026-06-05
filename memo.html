@@ -3,79 +3,184 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>meMO | Ontology and Methodology</title>
-    <meta name="description" content="meMO ontology and methodology specification for model-based medical device safety evidence.">
+    <title>MEMO Ontology | Evidence Specification</title>
+    <meta name="description" content="MEMO ontology and methodology — typed medical vocabulary for safety-critical medical devices.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="meMO home">
+      <a class="brand" href="/" aria-label="MEMO home">
         <img src="assets/logo.svg" alt="" width="34" height="31">
-        <span>meMO</span>
+        <span>MEMO</span>
       </a>
-      <nav aria-label="Repository links">
-        <a href="memo.html">meMO</a>
+      <nav aria-label="Primary navigation">
+        <a href="memo.html" class="active">ontology</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
+        <a href="https://memoarchitect.github.io/memo/" class="nav-docs">docs</a>
       </nav>
     </header>
 
     <main class="detail">
-      <a class="back-link" href="/">Back to overview</a>
+      <a class="back-link" href="/">&larr; Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow"><span class="num">01</span> Ontology and methodology</p>
-        <h1>Typed medical meaning, then predefined practice.</h1>
+        <p class="eyebrow">Layer 01 &middot; Ontology + Methodology</p>
+        <h1>The missing semantic layer for medical devices<span>.</span></h1>
         <p class="lede">
-          The ontology gives every safety-relevant thing a type. The
-          methodology tells teams how to apply those types through rigor
-          profiles, ISO 42010 viewpoints, rules, workflow stages, review gates,
-          and project bindings.
+          A domain ontology for safety-critical medical devices: purpose-built for
+          regulated systems where architecture, risk, verification, and evidence must
+          stay connected. SysML v2 provides the language. MEMO provides the
+          medical-device vocabulary and method.
         </p>
-        <a class="repo-button" href="https://github.com/memoarchitect/memo">github.com/memoarchitect/memo</a>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://memoarchitect.github.io/memo/ontology/packages/">Explore packages</a>
+          <a class="btn-secondary" href="https://github.com/memoarchitect/memo">View on GitHub</a>
+        </div>
       </section>
 
       <section class="detail-grid">
         <article>
-          <small>Ontology</small>
-          <h2>Typed medical meaning</h2>
-          <p>A minimal, medically grounded SysML v2 vocabulary published in one memo:: namespace for intended use, hazards, harms, risk controls, requirements, architecture, behavior, verification, and evidence.</p>
+          <small>Typed elements</small>
+          <h2>What the model can talk about</h2>
+          <p>
+            Every safety-relevant thing is a typed part with regulator-relevant attributes:
+            IntendedUse, Hazard, Harm, RiskControl, Requirement, Architecture, Behavior,
+            VerificationCase, and Evidence.
+          </p>
         </article>
         <article>
           <small>Semantic links</small>
-          <h2>Traceability as data</h2>
-          <p>Layers do not connect by free-form arrows. Every link is a SemanticLink subtype with named roles and a status, so the linker can check the element kind on each end.</p>
+          <h2>What the links mean</h2>
+          <p>
+            Every relation is a native SysML v2 <code>connection def</code> &mdash;
+            its name is the verb, its typed ends carry the roles. DerivesFrom,
+            SatisfiedBy, MitigatesHazard, VerifiedBy, ProducesEvidence.
+          </p>
         </article>
         <article>
-          <small>Methodology</small>
-          <h2>Predefined practice</h2>
-          <p>Teams start from a working structure rather than an empty model: pick rigor, pick viewpoints, apply rules, bind the method to a project, and extend through profiles.</p>
+          <small>Closure rules</small>
+          <h2>What must be complete</h2>
+          <p>
+            Rules walk required semantic links and flag missing paths. Every hazard
+            needs a control. Every control needs verification. Every verification
+            needs evidence. Gaps surface before design review.
+          </p>
         </article>
       </section>
 
-      <section class="technical-section" id="methodology">
+      <section class="technical-section">
         <div class="section-title">
-          <p class="eyebrow"><span class="num">02</span> Specification contents</p>
-          <h2>One source of truth for typed safety evidence.</h2>
+          <p class="eyebrow">Package structure</p>
+          <h2>Seven working surfaces under <code>memo::</code></h2>
+        </div>
+        <div class="pkg-list">
+          <div class="pkg-item" style="border-left-color: #2dd4a8">
+            <h3>memo::core</h3>
+            <span class="pkg-label">Shared foundation</span>
+            <p>Identity, traceability, documented/evidence elements, controlled values, and typed semantic relationships.</p>
+          </div>
+          <div class="pkg-item" style="border-left-color: #438ed0">
+            <h3>memo::architecture</h3>
+            <span class="pkg-label">What the device is</span>
+            <p>18 Arcadia-inspired layers for context, requirements, behavior, interfaces, hardware, software, risk, cyber, assurance, and decisions.</p>
+          </div>
+          <div class="pkg-item" style="border-left-color: #8971dc">
+            <h3>memo::methodology</h3>
+            <span class="pkg-label">How to apply the ontology</span>
+            <p>Profiles, patterns, rules, workflow steps, quality gates, viewpoints, and project bindings.</p>
+          </div>
+          <div class="pkg-item" style="border-left-color: #ef9b51">
+            <h3>memo::viewpoints &middot; views</h3>
+            <span class="pkg-label">Who sees what</span>
+            <p>Stakeholder-oriented concerns and concrete projections &mdash; diagram and document-backed views from the same model source.</p>
+          </div>
+          <div class="pkg-item" style="border-left-color: #e05d6f">
+            <h3>memo::compliance</h3>
+            <span class="pkg-label">Regulated outputs</span>
+            <p>Controlled artifacts, change management, postmarket traceability, and ISO 14971 risk-management-file views.</p>
+          </div>
+          <div class="pkg-item" style="border-left-color: #3ec98b">
+            <h3>memo::examples::gpca</h3>
+            <span class="pkg-label">Reference product model</span>
+            <p>A worked infusion-pump example used to validate and teach the modeling style &mdash; from clinical need to evidence view.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="technical-section">
+        <div class="section-title">
+          <p class="eyebrow">Semantic links</p>
+          <h2>Typed connections, not free-form arrows</h2>
+        </div>
+        <div class="link-table">
+          <div class="link-row">
+            <span class="link-domain">Requirement</span>
+            <span class="link-names">DerivesFrom &middot; SatisfiedBy &middot; DerivesInto</span>
+          </div>
+          <div class="link-row">
+            <span class="link-domain">Function</span>
+            <span class="link-names">AllocatedTo</span>
+          </div>
+          <div class="link-row">
+            <span class="link-domain">Interface</span>
+            <span class="link-names">RealizesInterface &middot; CrossesTrustBoundary &middot; BindsToInterface</span>
+          </div>
+          <div class="link-row">
+            <span class="link-domain">Verification</span>
+            <span class="link-names">VerifiedBy &middot; ProducesEvidence &middot; Validates &middot; IncludedIn</span>
+          </div>
+          <div class="link-row">
+            <span class="link-domain">Risk</span>
+            <span class="link-names">MitigatesHazard &middot; TracesRisk &middot; AssessedAgainst</span>
+          </div>
+          <div class="link-row">
+            <span class="link-domain">Cybersecurity</span>
+            <span class="link-names">ThreatenedBy &middot; Exploits &middot; MitigatesVulnerability &middot; ImpactsSafety</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="technical-section">
+        <div class="section-title">
+          <p class="eyebrow">Methodology</p>
+          <h2>A starting structure, not an empty model</h2>
         </div>
         <div class="technical-grid">
           <article>
-            <h3>One namespace</h3>
-            <p>A core memo:: namespace defines the vocabulary so viewpoints, methodology, examples, and compliance mappings can build on it without forking it.</p>
+            <h3>Risk-proportionate scope</h3>
+            <p>ResolvedMethodology keys scope to SafetyClassKind (A/B/C) and lifecycle stage &mdash; not a rigor dial.</p>
           </article>
           <article>
-            <h3>Closure rules</h3>
-            <p>Rules can check whether high-severity controls reach allocated behavior, acceptance criteria, verification cases, and evidence nodes.</p>
+            <h3>Viewpoints (ISO 42010)</h3>
+            <p>Viewpoints per audience and workflow stage; a View binds that intent to content.</p>
           </article>
           <article>
-            <h3>Method profiles</h3>
-            <p>Lightweight, balanced, or formal rigor profiles select viewpoints, required content, workflow stages, and review-gate exit criteria.</p>
+            <h3>Rules &amp; gates</h3>
+            <p>ElementUsageRule and RelationUsageRule carry a RuleStrengthKind; WorkflowSteps and QualityGate exit criteria.</p>
           </article>
           <article>
-            <h3>Extension points</h3>
-            <p>Projects add packages and methodology profiles for alarms, cybersecurity, usability, interoperability, data messaging, configuration, or device-specific patterns.</p>
+            <h3>Project binding</h3>
+            <p>ProjectMethodBinding pins a resolved method, with reusable ModelingPatterns and archetypes.</p>
           </article>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="" width="28" height="25">
+          <span>MEMO</span>
+        </div>
+        <div class="footer-links">
+          <a href="memo.html">Ontology</a>
+          <a href="memo-tools.html">Tools</a>
+          <a href="memo-architect.html">Architect</a>
+          <a href="https://memoarchitect.github.io/memo/">Docs</a>
+          <a href="https://github.com/memoarchitect">GitHub</a>
+        </div>
+        <div class="footer-copy">MIT License &middot; memo:: 0.2.0</div>
+      </div>
+    </footer>
   </body>
 </html>
