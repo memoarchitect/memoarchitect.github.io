@@ -550,6 +550,134 @@ h2 span {
   line-height: 1.42;
 }
 
+/* ── Resources section ── */
+
+.resources-section {
+  padding: 72px 76px;
+  background: #f7fafc;
+  border-top: 1px solid var(--line);
+}
+
+.resources-section h2 {
+  color: var(--ink);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.resources-lede {
+  max-width: 680px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 1.14rem;
+  line-height: 1.44;
+}
+
+.resources-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.resource-group-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  color: var(--teal-deep);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.resource-group-title svg {
+  flex: none;
+}
+
+.resource-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resource-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.resource-card:hover {
+  border-color: #9bded5;
+  box-shadow: 0 8px 20px rgba(12, 43, 73, 0.06);
+  transform: translateY(-2px);
+}
+
+.resource-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  flex: none;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.resource-icon-pdf {
+  background: #fce8e8;
+  color: #c0392b;
+}
+
+.resource-icon-repo {
+  background: var(--night);
+  color: #fff;
+}
+
+.resource-icon-docs {
+  background: var(--teal-soft);
+  color: var(--teal-deep);
+}
+
+.resource-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.resource-info h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 850;
+}
+
+.resource-info p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.38;
+}
+
+.resource-action {
+  flex: none;
+  color: var(--teal-deep);
+  font-size: 0.8rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.resource-card:hover .resource-action {
+  color: var(--teal);
+}
+
 /* ── CTA section ── */
 
 .cta-section {
@@ -978,6 +1106,11 @@ h2 span {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .resources-groups {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
   .modes-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -993,6 +1126,7 @@ h2 span {
   .thread-section,
   .stack-section,
   .standards-section,
+  .resources-section,
   .cta-section,
   .detail {
     padding-inline: 28px;
@@ -1050,6 +1184,7 @@ h2 span {
   .thread-section,
   .stack-section,
   .standards-section,
+  .resources-section,
   .cta-section,
   .detail {
     padding-inline: 18px;
