@@ -2,15 +2,22 @@
 
 Static GitHub Pages site for `memoarchitect.com`.
 
+## Version policy
+
+The website uses SemVer in `package.json` and releases at exactly the same
+version as Memo Architect. `memo-meta/scripts/check-release-versions.sh` enforces
+that equality while allowing independent patch versions for MEMO and Memo Tools
+on the same `MAJOR.MINOR` compatibility line.
+
+Run the dependency-free site check before release:
+
+```bash
+npm run check
+```
+
 ## GitHub Pages setup
 
-In the `memoarchitect/memoarchitect.github.io` repository:
-
-1. Copy the contents of this folder to the repository root.
-2. Commit and push to `main`.
-3. Open `Settings -> Pages`.
-4. Select `Deploy from a branch`.
-5. Use `main` and `/root`.
-6. Set the custom domain to `memoarchitect.com`.
+In the `memoarchitect/memoarchitect.github.io` repository, GitHub Pages deploys
+from `main` and `/root` with the custom domain `memoarchitect.com`.
 
 The `CNAME` file should stay at the repository root.
