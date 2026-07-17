@@ -24,13 +24,38 @@
     <main class="detail">
       <a class="back-link" href="/">&larr; Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow">Layer 03 &middot; Tools <span class="wip-badge">Work in progress</span></p>
+        <p class="eyebrow">Layer 03 &middot; Tools <span class="wip-badge">Published preview</span></p>
         <h1>Parse, check, generate<span>.</span></h1>
         <p class="lede">
           A Langium-based model engine and CLI parse text-first SysML v2 into a
           semantic graph, then run domain rules and closure checks. Run
           <code>memo validate</code> in CI, and each change produces a defined
           re-review scope.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#install">Install from npm</a>
+          <a class="btn-secondary" href="https://www.npmjs.com/package/@memoarchitect/tools">View on npm</a>
+        </div>
+      </section>
+
+      <section class="technical-section" id="install">
+        <div class="section-title">
+          <p class="eyebrow">Installation</p>
+          <h2>Install the model engine and <code>memo</code> CLI</h2>
+        </div>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">terminal</span>
+          </div>
+          <pre class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">npm install --save-exact @memoarchitect/tools@0.4.5</span>
+<span class="t-prompt">$</span> <span class="t-cmd">npx memo --help</span></pre>
+        </div>
+        <p>
+          Requires Node.js 20 or later. Install it in the project that contains
+          your device model so the CLI version stays pinned with the model.
         </p>
       </section>
 

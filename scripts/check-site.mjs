@@ -6,6 +6,11 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const pkg = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));
 const htmlFiles = readdirSync(root).filter((name) => name.endsWith('.html'));
 const failures = [];
+const packagePages = {
+  'memo.html': '@memoarchitect/ontology',
+  'memo-tools.html': '@memoarchitect/tools',
+  'memo-architect.html': '@memoarchitect/architect',
+};
 
 for (const name of htmlFiles) {
   const path = resolve(root, name);
@@ -13,6 +18,11 @@ for (const name of htmlFiles) {
 
   if (!html.includes(`MEMO Architect ${pkg.version}`)) {
     failures.push(`${name}: missing MEMO Architect ${pkg.version} release marker`);
+  }
+
+  const packageName = packagePages[name];
+  if (packageName && !html.includes(`npm install --save-exact ${packageName}@${pkg.version}`)) {
+    failures.push(`${name}: missing npm installation command for ${packageName}@${pkg.version}`);
   }
 
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {

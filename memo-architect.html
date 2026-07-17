@@ -24,12 +24,38 @@
     <main class="detail">
       <a class="back-link" href="/">&larr; Back to overview</a>
       <section class="detail-hero">
-        <p class="eyebrow">Layer 04 &middot; Architect <span class="wip-badge">Work in progress</span></p>
+        <p class="eyebrow">Layer 04 &middot; Architect <span class="wip-badge">Published preview</span></p>
         <h1>A web app over the same model<span>.</span></h1>
         <p class="lede">
           A React web app with six modes lets non-coders review the model without
           editing raw files. It is a view onto the code-first source, not a
           separate copy. The workbench should never fork the model.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#install">Install from npm</a>
+          <a class="btn-secondary" href="https://www.npmjs.com/package/@memoarchitect/architect">View on npm</a>
+        </div>
+      </section>
+
+      <section class="technical-section" id="install">
+        <div class="section-title">
+          <p class="eyebrow">Installation</p>
+          <h2>Install and start the visual workbench</h2>
+        </div>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">terminal</span>
+          </div>
+          <pre class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">npm install --save-exact @memoarchitect/architect@0.4.5</span>
+<span class="t-prompt">$</span> <span class="t-cmd">npx memo-architect dev</span>
+<span class="t-out">&rarr; open http://127.0.0.1:3000</span></pre>
+        </div>
+        <p>
+          Requires Node.js 20 or later. Architect installs the matching Tools and
+          Ontology packages as exact dependencies, so one install provides the full stack.
         </p>
       </section>
 
