@@ -421,6 +421,38 @@ h2 span {
   font-size: 1.2rem;
 }
 
+/* ── V-model overview ── */
+
+.home-model-section {
+  padding: 72px 76px;
+  background: #fff;
+}
+
+.home-model-section h2 {
+  color: var(--ink);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.home-model-lede {
+  max-width: 900px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
+.home-model-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(12, 43, 73, 0.08);
+}
+
 /* ── Stack section ── */
 
 .stack-section {
@@ -1160,6 +1192,7 @@ h2 span {
   .cover-copy,
   .problem,
   .thread-section,
+  .home-model-section,
   .stack-section,
   .standards-section,
   .resources-section,
@@ -1218,6 +1251,7 @@ h2 span {
   .cover-copy,
   .problem,
   .thread-section,
+  .home-model-section,
   .stack-section,
   .standards-section,
   .resources-section,
@@ -1243,6 +1277,7 @@ h2 span {
 
   .problem h2,
   .thread-section h2,
+  .home-model-section h2,
   .stack-section h2,
   .standards-section h2,
   .cta-section h2,

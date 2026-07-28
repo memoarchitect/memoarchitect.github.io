@@ -12,18 +12,21 @@ const packagePages = {
     version: pkg.memoVersions.ontology,
     docsUrl: 'https://memoarchitect.com/memo/',
     repoUrl: 'https://github.com/memoarchitect/memo',
+    npmUrl: 'https://www.npmjs.com/package/@memoarchitect/ontology',
   },
   'memo-tools.html': {
     packageName: '@memoarchitect/tools',
     version: pkg.memoVersions.tools,
     docsUrl: 'https://memoarchitect.com/memo-tools/',
     repoUrl: 'https://github.com/memoarchitect/memo-tools',
+    npmUrl: 'https://www.npmjs.com/package/@memoarchitect/tools',
   },
   'memo-architect.html': {
     packageName: '@memoarchitect/architect',
     version: pkg.memoVersions.architect,
     docsUrl: 'https://memoarchitect.com/memo-architect/',
     repoUrl: 'https://github.com/memoarchitect/memo-architect',
+    npmUrl: 'https://www.npmjs.com/package/@memoarchitect/architect',
   },
 };
 
@@ -40,6 +43,9 @@ for (const name of htmlFiles) {
   }
   if (product && !html.includes(product.repoUrl)) {
     failures.push(`${name}: missing its GitHub repository URL ${product.repoUrl}`);
+  }
+  if (product && !html.includes(product.npmUrl)) {
+    failures.push(`${name}: missing its npm package URL ${product.npmUrl}`);
   }
   if (product && !html.includes('Pre-1.0 stability notice.')) {
     failures.push(`${name}: missing the pre-1.0 stability notice`);
