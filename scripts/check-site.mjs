@@ -7,9 +7,24 @@ const pkg = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));
 const htmlFiles = readdirSync(root).filter((name) => name.endsWith('.html'));
 const failures = [];
 const packagePages = {
-  'memo.html': { packageName: '@memoarchitect/ontology', version: pkg.memoVersions.ontology },
-  'memo-tools.html': { packageName: '@memoarchitect/tools', version: pkg.memoVersions.tools },
-  'memo-architect.html': { packageName: '@memoarchitect/architect', version: pkg.memoVersions.architect },
+  'memo.html': {
+    packageName: '@memoarchitect/ontology',
+    version: pkg.memoVersions.ontology,
+    docsUrl: 'https://memoarchitect.com/memo/',
+    repoUrl: 'https://github.com/memoarchitect/memo',
+  },
+  'memo-tools.html': {
+    packageName: '@memoarchitect/tools',
+    version: pkg.memoVersions.tools,
+    docsUrl: 'https://memoarchitect.com/memo-tools/',
+    repoUrl: 'https://github.com/memoarchitect/memo-tools',
+  },
+  'memo-architect.html': {
+    packageName: '@memoarchitect/architect',
+    version: pkg.memoVersions.architect,
+    docsUrl: 'https://memoarchitect.com/memo-architect/',
+    repoUrl: 'https://github.com/memoarchitect/memo-architect',
+  },
 };
 
 for (const name of htmlFiles) {
@@ -19,6 +34,18 @@ for (const name of htmlFiles) {
   const product = packagePages[name];
   if (product && !html.includes(`npm install --save-exact ${product.packageName}@${product.version}`)) {
     failures.push(`${name}: missing npm installation command for ${product.packageName}@${product.version}`);
+  }
+  if (product && !html.includes(product.docsUrl)) {
+    failures.push(`${name}: missing its MkDocs URL ${product.docsUrl}`);
+  }
+  if (product && !html.includes(product.repoUrl)) {
+    failures.push(`${name}: missing its GitHub repository URL ${product.repoUrl}`);
+  }
+  if (product && !html.includes('Pre-1.0 stability notice.')) {
+    failures.push(`${name}: missing the pre-1.0 stability notice`);
+  }
+  if (html.includes('memoarchitect.github.io')) {
+    failures.push(`${name}: use the canonical memoarchitect.com documentation URL`);
   }
 
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {

@@ -17,7 +17,7 @@
         <a href="memo.html" class="active">ontology</a>
         <a href="memo-tools.html">tools</a>
         <a href="memo-architect.html">architect</a>
-        <a href="https://memoarchitect.github.io/memo/" class="nav-docs">docs</a>
+        <a href="https://memoarchitect.com/memo/" class="nav-docs">MkDocs</a>
       </nav>
     </header>
 
@@ -34,10 +34,17 @@
         </p>
         <div class="hero-actions">
           <a class="btn-primary" href="#install">Install from npm</a>
-          <a class="btn-secondary" href="https://memoarchitect.github.io/memo/ontology/packages/">Explore packages</a>
-          <a class="btn-secondary" href="https://github.com/memoarchitect/memo">View on GitHub</a>
+          <a class="btn-secondary" href="https://memoarchitect.com/memo/">MkDocs documentation</a>
+          <a class="btn-secondary" href="https://github.com/memoarchitect/memo">GitHub repository</a>
         </div>
       </section>
+
+      <aside class="stability-notice" aria-label="Pre-1.0 stability notice">
+        <strong>Pre-1.0 stability notice.</strong>
+        MEMO is evolving and its ontology, APIs, and file layout may change before 1.0.
+        For reproducible work, use a tagged release and install the exact version shown below
+        instead of tracking <code>main</code> or a floating npm range.
+      </aside>
 
       <section class="technical-section" id="install">
         <div class="section-title">
@@ -51,7 +58,7 @@
             <span class="terminal-dot"></span>
             <span class="terminal-title">terminal</span>
           </div>
-          <pre class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">npm install --save-exact @memoarchitect/ontology@0.6.2</span></pre>
+          <pre class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">npm install --save-exact @memoarchitect/ontology@0.6.3</span></pre>
         </div>
         <p>
           Requires Node.js 20 or later. This content-only package provides the
@@ -65,7 +72,7 @@
           <small>Typed elements</small>
           <h2>What the model can talk about</h2>
           <p>
-            Every safety-relevant thing is a typed part with regulator-relevant attributes:
+            Safety-relevant concepts are typed definitions and usages with regulator-relevant attributes:
             IntendedUse, ReasonablyForeseeableMisuse, SafetyRelatedCharacteristic,
             HazardCause, Hazard, SequenceOfEvents, HazardousSituation, Harm, Risk,
             RiskControlMeasure, ResidualRisk, Benefit, Requirement, Architecture,
@@ -95,38 +102,38 @@
       <section class="technical-section">
         <div class="section-title">
           <p class="eyebrow">Package structure</p>
-          <h2>Seven working surfaces under <code>memo::</code></h2>
+          <h2>Eight top-level surfaces under <code>memo::</code></h2>
         </div>
         <div class="pkg-list">
           <div class="pkg-item" style="border-left-color: #2dd4a8">
-            <h3>memo::core</h3>
-            <span class="pkg-label">Shared foundation</span>
-            <p>Identity, traceability, documented/evidence elements, controlled values, and typed semantic relationships.</p>
+            <h3>memo::architecture</h3>
+            <span class="pkg-label">What the device is and does</span>
+            <p>Operational context, functions, behavior, logical structure, interfaces, software, hardware, deployment, and physical realization.</p>
           </div>
           <div class="pkg-item" style="border-left-color: #438ed0">
-            <h3>memo::architecture</h3>
-            <span class="pkg-label">What the device is</span>
-            <p>18 Arcadia-inspired layers for context, requirements, behavior, interfaces, hardware, software, risk, cyber, assurance, and decisions.</p>
+            <h3>memo::assurance</h3>
+            <span class="pkg-label">Why the design is acceptable</span>
+            <p>Needs and requirements, safety risk, cybersecurity, human factors, verification, validation, and their evidence.</p>
           </div>
           <div class="pkg-item" style="border-left-color: #8971dc">
-            <h3>memo::methodology</h3>
-            <span class="pkg-label">How to apply the ontology</span>
-            <p>Profiles, patterns, rules, workflow steps, quality gates, viewpoints, and project bindings.</p>
+            <h3>memo::artifacts &middot; compliance</h3>
+            <span class="pkg-label">Controlled outputs</span>
+            <p>Artifact definitions, change and postmarket records, document views, and ISO 14971 risk-management-file content.</p>
           </div>
           <div class="pkg-item" style="border-left-color: #ef9b51">
-            <h3>memo::viewpoints &middot; views</h3>
-            <span class="pkg-label">Who sees what</span>
-            <p>Stakeholder-oriented concerns and concrete projections &mdash; diagram and document-backed views from the same model source.</p>
+            <h3>memo::core</h3>
+            <span class="pkg-label">Shared foundation</span>
+            <p>Identity, terminology, dimensions, controlled values, common semantic bases, and typed relationships.</p>
           </div>
           <div class="pkg-item" style="border-left-color: #e05d6f">
-            <h3>memo::compliance</h3>
-            <span class="pkg-label">Regulated outputs</span>
-            <p>Controlled artifacts, change management, postmarket traceability, and ISO 14971 risk-management-file views.</p>
+            <h3>memo::methodology</h3>
+            <span class="pkg-label">How to apply the ontology</span>
+            <p>Profiles, patterns, rules, workflows, gates, archetypes, and project-specific method resolution.</p>
           </div>
           <div class="pkg-item" style="border-left-color: #3ec98b">
-            <h3>memo::examples::gpca</h3>
-            <span class="pkg-label">Reference product model</span>
-            <p>A worked infusion-pump example used to validate and teach the modeling style &mdash; from clinical need to evidence view.</p>
+            <h3>memo::rules &middot; viewpoints</h3>
+            <span class="pkg-label">Checks and review projections</span>
+            <p>Closure, coverage, cross-layer, lifecycle, ontology, and quantitative rules plus reusable diagram and document views grouped by viewpoint.</p>
           </div>
         </div>
       </section>
@@ -147,7 +154,7 @@
           </div>
           <div class="link-row">
             <span class="link-domain">Interface</span>
-            <span class="link-names">RealizesInterface &middot; CrossesTrustBoundary &middot; BindsToInterface</span>
+            <span class="link-names">Realizes &middot; CrossesTrustBoundary &middot; BindsToInterface</span>
           </div>
           <div class="link-row">
             <span class="link-domain">Verification</span>
@@ -155,11 +162,11 @@
           </div>
           <div class="link-row">
             <span class="link-domain">Risk</span>
-            <span class="link-names">Causes &middot; Mitigates &middot; MitigatesHazard &middot; TracesRisk &middot; AssessedAgainst</span>
+            <span class="link-names">Causes &middot; Mitigates &middot; TracesRisk &middot; AssessedAgainst</span>
           </div>
           <div class="link-row">
             <span class="link-domain">Cybersecurity</span>
-            <span class="link-names">ThreatenedBy &middot; Exploits &middot; MitigatesVulnerability &middot; ImpactsSafety</span>
+            <span class="link-names">ThreatenedBy &middot; Exploits &middot; DerivesCyberRequirement &middot; ImpactsSafety</span>
           </div>
         </div>
       </section>
@@ -200,10 +207,10 @@
           <a href="memo.html">Ontology</a>
           <a href="memo-tools.html">Tools</a>
           <a href="memo-architect.html">Architect</a>
-          <a href="https://memoarchitect.github.io/memo/">Docs</a>
-          <a href="https://github.com/memoarchitect/memo">GitHub</a>
+          <a href="https://memoarchitect.com/memo/">MkDocs documentation</a>
+          <a href="https://github.com/memoarchitect/memo">GitHub repository</a>
         </div>
-        <div class="footer-copy">MIT License &middot; MEMO Ontology 0.6.2</div>
+        <div class="footer-copy">MIT License &middot; MEMO Ontology 0.6.3</div>
       </div>
     </footer>
   </body>
