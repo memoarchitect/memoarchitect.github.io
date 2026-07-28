@@ -7,22 +7,18 @@ const pkg = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));
 const htmlFiles = readdirSync(root).filter((name) => name.endsWith('.html'));
 const failures = [];
 const packagePages = {
-  'memo.html': '@memoarchitect/ontology',
-  'memo-tools.html': '@memoarchitect/tools',
-  'memo-architect.html': '@memoarchitect/architect',
+  'memo.html': { packageName: '@memoarchitect/ontology', version: pkg.memoVersions.ontology },
+  'memo-tools.html': { packageName: '@memoarchitect/tools', version: pkg.memoVersions.tools },
+  'memo-architect.html': { packageName: '@memoarchitect/architect', version: pkg.memoVersions.architect },
 };
 
 for (const name of htmlFiles) {
   const path = resolve(root, name);
   const html = readFileSync(path, 'utf8');
 
-  if (!html.includes(`MEMO Architect ${pkg.version}`)) {
-    failures.push(`${name}: missing MEMO Architect ${pkg.version} release marker`);
-  }
-
-  const packageName = packagePages[name];
-  if (packageName && !html.includes(`npm install --save-exact ${packageName}@${pkg.version}`)) {
-    failures.push(`${name}: missing npm installation command for ${packageName}@${pkg.version}`);
+  const product = packagePages[name];
+  if (product && !html.includes(`npm install --save-exact ${product.packageName}@${product.version}`)) {
+    failures.push(`${name}: missing npm installation command for ${product.packageName}@${product.version}`);
   }
 
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
@@ -40,4 +36,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Checked ${htmlFiles.length} pages for MEMO Architect ${pkg.version}; all local links resolve.`);
+console.log(`Checked ${htmlFiles.length} website pages; product versions and local links resolve.`);

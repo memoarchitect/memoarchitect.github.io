@@ -1,6 +1,11 @@
 {
   "name": "@memo/website",
-  "version": "0.5.0",
+  "version": "0.6.4",
+  "memoVersions": {
+    "ontology": "0.6.2",
+    "tools": "0.6.4",
+    "architect": "0.6.3"
+  },
   "private": true,
   "description": "Static product website for the MEMO stack",
   "scripts": {
