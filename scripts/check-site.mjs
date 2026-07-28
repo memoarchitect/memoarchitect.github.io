@@ -36,7 +36,7 @@ for (const name of htmlFiles) {
     failures.push(`${name}: missing npm installation command for ${product.packageName}@${product.version}`);
   }
   if (product && !html.includes(product.docsUrl)) {
-    failures.push(`${name}: missing its MkDocs URL ${product.docsUrl}`);
+    failures.push(`${name}: missing its documentation URL ${product.docsUrl}`);
   }
   if (product && !html.includes(product.repoUrl)) {
     failures.push(`${name}: missing its GitHub repository URL ${product.repoUrl}`);
