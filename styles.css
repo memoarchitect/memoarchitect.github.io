@@ -425,7 +425,20 @@ h2 span {
 
 .home-model-section {
   padding: 72px 76px;
-  background: #fff;
+  background: linear-gradient(145deg, #edf7fa 0%, #f8fbfc 48%, #e9faf5 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.home-model-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.home-model-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 48px;
+  align-items: end;
 }
 
 .home-model-section h2 {
@@ -436,21 +449,62 @@ h2 span {
 }
 
 .home-model-lede {
-  max-width: 900px;
-  margin-top: 16px;
+  max-width: 620px;
+  margin: 0 0 4px;
   color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.5;
+}
+
+.home-model-frame {
+  position: relative;
+  display: block;
+  margin-top: 38px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(92, 113, 136, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 22px 50px rgba(2, 31, 54, 0.14);
+  cursor: zoom-in;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.home-model-frame:hover,
+.home-model-frame:focus-visible {
+  border-color: rgba(22, 140, 114, 0.48);
+  box-shadow: 0 28px 62px rgba(2, 31, 54, 0.2);
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.home-model-zoom {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 1;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  background: rgba(11, 30, 45, 0.88);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
 }
 
 .home-model-image {
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 30px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(12, 43, 73, 0.08);
+  border-radius: 16px;
+  transition: transform 0.18s ease;
+}
+
+.home-model-frame:hover .home-model-image,
+.home-model-frame:focus-visible .home-model-image {
+  transform: scale(1.004);
 }
 
 /* ── Stack section ── */
@@ -1207,6 +1261,15 @@ h2 span {
     grid-template-columns: 1fr;
   }
 
+  .home-model-copy {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-model-lede {
+    max-width: 760px;
+  }
+
   .stack-grid,
   .standards-grid {
     grid-template-columns: 1fr;
@@ -1292,6 +1355,23 @@ h2 span {
   .thread-node {
     padding: 7px 12px;
     font-size: 0.78rem;
+  }
+
+  .home-model-frame {
+    margin-top: 26px;
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  .home-model-image {
+    border-radius: 11px;
+  }
+
+  .home-model-zoom {
+    top: 16px;
+    right: 16px;
+    padding: 6px 9px;
+    font-size: 0.68rem;
   }
 
   .cover-actions {
