@@ -733,6 +733,12 @@ h2 span {
   color: #c0392b;
 }
 
+.resource-icon-video {
+  background: #fee8e7;
+  color: #c5221f;
+  font-size: 0.64rem;
+}
+
 .resource-icon-repo {
   background: var(--night);
   color: #fff;
