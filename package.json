@@ -1,10 +1,10 @@
 {
   "name": "@memo/website",
-  "version": "0.8.26",
+  "version": "0.8.27",
   "memoVersions": {
-    "ontology": "0.8.22",
-    "tools": "0.8.7",
-    "architect": "0.8.26"
+    "ontology": "0.8.24",
+    "tools": "0.8.8",
+    "architect": "0.8.27"
   },
   "private": true,
   "description": "Static product website for the MEMO stack",
