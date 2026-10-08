@@ -46,6 +46,13 @@
         <h3>Breaking</h3>
         <div class="detail-grid">
           <article>
+            <small>Starters</small>
+            <h2>One project skeleton</h2>
+            <p>
+              The manifest's <code>templates</code> map and <code>init.defaultTemplate</code> are replaced by <code>init.template</code>, and the <code>samd</code>, <code>infusion-pump</code>, <code>monitoring-device</code> and <code>connected-device</code> starters are removed. Start from an example instead: <code>memo-architect init --example &lt;id&gt;</code>.
+            </p>
+          </article>
+          <article>
             <small>Rules</small>
             <h2>A rule traces to a clause by a dependency</h2>
             <p>
@@ -73,6 +80,13 @@
         </div>
         <h3>Breaking</h3>
         <div class="detail-grid">
+          <article>
+            <small>Starters</small>
+            <h2>No <code>--template</code></h2>
+            <p>
+              <code>memo-architect init</code> copies the one skeleton the ontology's manifest names, and <code>--example &lt;id&gt;</code> starts from a copy of an example. <code>--template</code> and the template list in <code>init --list</code> are gone.
+            </p>
+          </article>
           <article>
             <small>Commands</small>
             <h2><code>memo</code> and <code>memo-architect</code> split</h2>
@@ -129,6 +143,13 @@
         </div>
         <h3>Breaking</h3>
         <div class="detail-grid">
+          <article>
+            <small>Commands</small>
+            <h2><code>memo-architect templates</code> is removed</h2>
+            <p>
+              In Architect a template is a DHF document template. Project starters are gone, so start a project with <code>init</code> or <code>init --example &lt;id&gt;</code>.
+            </p>
+          </article>
           <article>
             <small>Commands</small>
             <h2>Project commands live in <code>memo-architect</code></h2>
