@@ -38,94 +38,125 @@
         </p>
       </section>
 
-      <section class="technical-section" id="next">
+      <section class="technical-section" id="memo">
         <div class="section-title">
-          <p class="eyebrow">Next release &middot; 0.14.0 &middot; not yet published</p>
-          <h2>Breaking changes</h2>
+          <p class="eyebrow">Ontology &middot; <code>@memoarchitect/ontology</code></p>
+          <h2>0.14.0 &middot; not yet published</h2>
         </div>
+        <h3>Breaking</h3>
         <div class="detail-grid">
           <article>
-            <small>Ontology</small>
+            <small>Rules</small>
             <h2>A rule traces to a clause by a dependency</h2>
             <p>
-              A rule's trace to the clause it enforces was a <code>ref enforces</code>
-              member. It is now <code>#EnforcesClause dependency from &lt;Rule&gt; to
-              &lt;clause&gt;, &lt;clause&gt;;</code>, written beside the rule. A rule may
-              name several clauses or none. <strong>To move:</strong> replace each
-              <code>ref enforces : StandardClause[1..*] = a.b.c;</code> with the
-              dependency, spelling the clause with <code>::</code> and importing
-              <code>memo_artifacts_standards_traceability::EnforcesClause</code>.
-              Ontology 0.13.x remains tagged <code>pre-typed-rule-clause-relation</code>.
-            </p>
-          </article>
-          <article>
-            <small>Tools</small>
-            <h2>Commands split between <code>memo</code> and <code>memo-architect</code></h2>
-            <p>
-              <code>memo</code> compiles, validates, packs and checks the toolchain;
-              everything else, including <code>init</code>, is
-              <code>memo-architect</code>. A retired command exits with an error
-              naming its replacement. <code>memo package</code> is replaced by
-              <code>memo pack</code> (a SysAnd KPAR) and
-              <code>memo-architect import kpar</code>.
-            </p>
-          </article>
-          <article>
-            <small>Tools &middot; Architect</small>
-            <h2>The compiler is named by the project</h2>
-            <p>
-              A project names its compiler with <code>toolchain.compiler</code>. A
-              person can override it for themselves in Architect or with
-              <code>memo-architect config set compiler</code>; tool paths are found
-              automatically and are rejected in a checked-in project file.
+              A rule's trace to the clause it enforces was a <code>ref enforces</code> member. It is now <code>#EnforcesClause dependency from &lt;Rule&gt; to &lt;clause&gt;, &lt;clause&gt;;</code>, written beside the rule. A rule may name several clauses or none. <strong>To move:</strong> replace each <code>ref enforces : StandardClause[1..*] = a.b.c;</code> with the dependency, spelling the clause with <code>::</code> and importing <code>memo_artifacts_standards_traceability::EnforcesClause</code>. The previous form is tagged <code>pre-typed-rule-clause-relation</code>.
             </p>
           </article>
         </div>
-      </section>
-
-      <section class="technical-section">
-        <div class="section-title">
-          <p class="eyebrow">Next release &middot; 0.14.0</p>
-          <h2>Additions</h2>
-        </div>
+        <h3>Added</h3>
         <div class="detail-grid">
           <article>
-            <small>Ontology &middot; Tools</small>
+            <small>Rules</small>
             <h2>Rule obligation</h2>
             <p>
-              Every rule states <code>required</code>, <code>recommended</code> or
-              <code>bestPractice</code>. A rule that states no severity takes
-              <code>error</code>, <code>warning</code> or <code>info</code> from it.
-              Rules that trace to a clause start <code>required</code>; the rest start
-              <code>recommended</code>. List by obligation with
-              <code>memo validate --rules --rules-obligation required</code>.
+              Every rule states <code>required</code>, <code>recommended</code> or <code>bestPractice</code> (<code>RuleObligationKind</code>). Rules that trace to a clause start <code>required</code>; the rest start <code>recommended</code>. A rule that states no severity takes <code>error</code>, <code>warning</code> or <code>info</code> from it.
+            </p>
+          </article>
+        </div>
+        <p>Earlier releases: the tags in <a href="https://github.com/memoarchitect/memo/tags">memo</a>.</p>
+      </section>
+
+      <section class="technical-section" id="memo-tools">
+        <div class="section-title">
+          <p class="eyebrow">Tools &middot; <code>@memoarchitect/tools</code></p>
+          <h2>0.14.0 &middot; not yet published</h2>
+        </div>
+        <h3>Breaking</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Commands</small>
+            <h2><code>memo</code> and <code>memo-architect</code> split</h2>
+            <p>
+              <code>memo</code> compiles, validates, packs and checks the toolchain; everything else, including <code>init</code>, is <code>memo-architect</code>. A retired command exits with an error naming its replacement. <code>memo package</code> is replaced by <code>memo pack</code> (a SysAnd KPAR) and <code>memo-architect import kpar</code>.
             </p>
           </article>
           <article>
-            <small>Tools</small>
-            <h2>Faster edits, a smaller handoff</h2>
+            <small>Settings</small>
+            <h2>The project names its compiler</h2>
             <p>
-              Stage 1 converts only the documents an edit reached and stores them
-              compressed. With OpenSysML 0.9.3 or later, the compact API JSON
-              format is used where the service offers it.
+              A project names its compiler with <code>toolchain.compiler</code>. A person overrides it for themselves in their user settings; tool paths are found automatically and are rejected in a checked-in project file.
+            </p>
+          </article>
+          <article>
+            <small>Rules</small>
+            <h2>Rules read the new trace</h2>
+            <p>
+              The loader reads <code>#EnforcesClause</code> dependencies. Ontology 0.13.x and earlier, which use <code>ref enforces</code>, no longer show clause traces.
             </p>
           </article>
         </div>
+        <h3>Added</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Rules</small>
+            <h2>Filter by obligation</h2>
+            <p>
+              <code>memo validate --rules --rules-obligation required</code> lists the rules of one obligation; <code>rules new --obligation</code> and <code>--enforces</code> write the new forms.
+            </p>
+          </article>
+          <article>
+            <small>Performance</small>
+            <h2>Faster edits, a smaller handoff</h2>
+            <p>
+              Stage 1 converts only the documents an edit reached and stores them compressed. With OpenSysML 0.9.3 or later, the compact API JSON format is used where the service offers it.
+            </p>
+          </article>
+          <article>
+            <small>Packaging</small>
+            <h2>Real SysAnd packages</h2>
+            <p>
+              <code>memo pack</code> builds a KPAR from the declared sources only, not from examples or the ontology.
+            </p>
+          </article>
+        </div>
+        <p>Earlier releases: the tags in <a href="https://github.com/memoarchitect/memo-tools/tags">memo-tools</a>.</p>
       </section>
 
-      <section class="technical-section">
+      <section class="technical-section" id="memo-architect">
         <div class="section-title">
-          <p class="eyebrow">Earlier releases</p>
-          <h2>0.13.2 and before</h2>
+          <p class="eyebrow">Architect &middot; <code>@memoarchitect/architect</code></p>
+          <h2>0.14.0 &middot; not yet published</h2>
         </div>
-        <p>
-          Notes for each earlier release are the tagged commits in
-          <a href="https://github.com/memoarchitect/memo/tags">memo</a>,
-          <a href="https://github.com/memoarchitect/memo-tools/tags">memo-tools</a> and
-          <a href="https://github.com/memoarchitect/memo-architect/tags">memo-architect</a>.
-          From 0.14.0 each release gets an entry here.
-        </p>
+        <h3>Breaking</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Commands</small>
+            <h2>Project commands live in <code>memo-architect</code></h2>
+            <p>
+              <code>init</code> and the other project commands that were under <code>memo</code> are now <code>memo-architect</code> commands. A retired <code>memo</code> command exits with an error naming its replacement.
+            </p>
+          </article>
+        </div>
+        <h3>Added</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Settings</small>
+            <h2>Choose the compiler in Architect</h2>
+            <p>
+              The Compiler control sets the project's compiler and, separately, your own ("just for me"). <code>memo-architect config set|get|unset</code> does the same from a terminal.
+            </p>
+          </article>
+          <article>
+            <small>Rules</small>
+            <h2>Rule editor</h2>
+            <p>
+              Not in this release: obligation and the typed trace in the rule editor follow in a later one.
+            </p>
+          </article>
+        </div>
+        <p>Earlier releases: the tags in <a href="https://github.com/memoarchitect/memo-architect/tags">memo-architect</a>.</p>
       </section>
+
     </main>
 
     <footer class="site-footer">
