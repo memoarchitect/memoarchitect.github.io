@@ -129,7 +129,7 @@
             <small>Packaging</small>
             <h2>Real SysAnd packages</h2>
             <p>
-              <code>memo pack</code> builds a KPAR from the declared sources only, not from examples or the ontology. A package's <code>.project.json</code> lists the packages its sources import as <code>urn:kpar:&lt;package&gt;</code> usages with a <code>^version</code> constraint (an extension lists the ontology, and any other extension it imports).
+              <code>memo pack</code> builds a KPAR from the declared sources only, not from examples or the ontology. A package's <code>.project.json</code> lists the packages its sources import as <code>urn:kpar:&lt;package&gt;</code> usages with a <code>^version</code> constraint (an extension lists the ontology, and any other extension it imports). <code>memo-architect sysand publish</code> (a dry run) stages exactly what <code>memo pack</code> stages, so it reports the real version and the same file set; before, it reported every version as 0.0.0.
             </p>
           </article>
         </div>
