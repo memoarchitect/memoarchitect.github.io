@@ -63,6 +63,20 @@
         <h3>Added</h3>
         <div class="detail-grid">
           <article>
+            <small>Architect</small>
+            <h2>Rule editor: obligation and the typed trace</h2>
+            <p>
+              The Rules view shows each rule's obligation and each <code>EnforcesClause</code> trace, filters by obligation, and no longer calls a rule with no clause a gap. The new-rule form takes an obligation (the severity follows it unless you choose one) and shows each chosen clause as the typed trace it writes.
+            </p>
+          </article>
+          <article>
+            <small>Ontology</small>
+            <h2>Product security and threat intelligence</h2>
+            <p>
+              Cybersecurity gains <code>ThreatActor</code>, <code>AttackTechnique</code> (an external framework's identifier), <code>AttackPath</code>, <code>SecurityProperty</code>, <code>CybersecurityAssumption</code>, <code>SBOMComponent</code>, <code>PenTestFinding</code>, <code>PostmarketProcess</code> and <code>CyberRiskAssessment</code> (inherent or residual, without copying the risk); thirteen relations that link them; and <code>cveReference</code> and <code>vulnerabilityDisposition</code> on a vulnerability. Additive: no existing model changes.
+            </p>
+          </article>
+          <article>
             <small>Rules</small>
             <h2>Rule obligation</h2>
             <p>
@@ -122,7 +136,7 @@
             <small>Rules</small>
             <h2>Filter by obligation</h2>
             <p>
-              <code>memo validate --rules --rules-obligation required</code> lists the rules of one obligation; <code>rules new --obligation</code> and <code>--enforces</code> write the new forms.
+              <code>memo validate --rules --rules-obligation required</code> lists the rules of one obligation; <code>new rule --obligation</code> and <code>--enforces</code> write the new forms.
             </p>
           </article>
           <article>
