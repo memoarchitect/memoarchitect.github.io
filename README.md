@@ -30,6 +30,6 @@ file configures the production domain and must remain at the repository root.
 ## Release alignment
 
 The website version follows MEMO Architect’s release version. The
-`memo-meta/scripts/check-release-versions.mjs` check verifies the intended
+`memo-meta/scripts/check-release-versions.sh` check verifies the intended
 release alignment while allowing MEMO Ontology and MEMO Tools to have
 independent patch versions within the same major/minor compatibility line.
