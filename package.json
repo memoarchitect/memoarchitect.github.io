@@ -2,7 +2,7 @@
   "name": "@memo/website",
   "version": "0.16.5",
   "memoVersions": {
-    "ontology": "0.16.4",
+    "ontology": "0.16.5",
     "tools": "0.16.5",
     "architect": "0.16.5"
   },
