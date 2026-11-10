@@ -49,6 +49,29 @@
       <section class="technical-section" id="memo">
         <div class="section-title">
           <p class="eyebrow">Ontology &middot; <code>@memoarchitect/ontology</code></p>
+          <h2>0.20.0</h2>
+        </div>
+        <h3>Breaking</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Quantities</small>
+            <h2>Ranges are constraints, not strings</h2>
+            <p>
+              <code>minValue</code>, <code>maxValue</code> and <code>signalRange</code> are removed. A range is a constraint on the type of the attribute that holds the value. <code>bitRateBps</code> is now a quantity.
+            </p>
+          </article>
+        </div>
+        <h3>Added</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Rules</small>
+            <h2>An exchange belongs to a behaviour</h2>
+            <p>
+              <code>CR-ONT-104</code> warns when either end of a functional exchange is in no behaviour.
+            </p>
+          </article>
+        </div>
+        <div class="section-title">
           <h2>0.15.0 &middot; experimental release</h2>
         </div>
         <h3>Breaking</h3>
@@ -98,6 +121,36 @@
       <section class="technical-section" id="memo-tools">
         <div class="section-title">
           <p class="eyebrow">Tools &middot; <code>@memoarchitect/tools</code></p>
+          <h2>0.20.0</h2>
+        </div>
+        <h3>Breaking</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Ontology</small>
+            <h2>Follows the ontology</h2>
+            <p>
+              A model that sets the removed range attributes, or a string <code>bitRateBps</code>, fails to compile.
+            </p>
+          </article>
+        </div>
+        <h3>Added</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Change</small>
+            <h2>Breaking-change verdicts</h2>
+            <p>
+              A change to an item, port or interface is judged breaking, compatible or unknown, with who is affected. The diff now sees what a link carries, multiplicities and enumeration members.
+            </p>
+          </article>
+          <article>
+            <small>Analysis</small>
+            <h2>Where used, across releases</h2>
+            <p>
+              <code>whereUsed</code> lists what uses a definition, and its history follows it through every release.
+            </p>
+          </article>
+        </div>
+        <div class="section-title">
           <h2>0.15.0 &middot; experimental release</h2>
         </div>
         <h3>Breaking</h3>
@@ -192,6 +245,33 @@
       <section class="technical-section" id="memo-architect">
         <div class="section-title">
           <p class="eyebrow">Architect &middot; <code>@memoarchitect/architect</code></p>
+          <h2>0.20.0</h2>
+        </div>
+        <h3>Added</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Action flow</small>
+            <h2>Walk through a flow</h2>
+            <p>
+              Step through a flow, choose the way on at a decision, mark a check as failing, play it, link to the exact step, or record it.
+            </p>
+          </article>
+          <article>
+            <small>Canvas</small>
+            <h2>Smooth layout changes and search</h2>
+            <p>
+              Folding and regrouping move boxes smoothly, opening a composite leaves the rest in place, <code>/</code> finds a box, and a card lists what a clicked box is connected to.
+            </p>
+          </article>
+          <article>
+            <small>Lanes</small>
+            <h2>Group and nest</h2>
+            <p>
+              See how many groups each choice makes, draw them as lanes or boxes, nest allocation and stage, and share the choice by link.
+            </p>
+          </article>
+        </div>
+        <div class="section-title">
           <h2>0.15.0 &middot; experimental release</h2>
         </div>
         <h3>Breaking</h3>
