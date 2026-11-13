@@ -49,6 +49,29 @@
       <section class="technical-section" id="memo">
         <div class="section-title">
           <p class="eyebrow">Ontology &middot; <code>@memoarchitect/ontology</code></p>
+          <h2>0.21.0</h2>
+        </div>
+        <h3>Breaking</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Functional layer</small>
+            <h2>A step is a function</h2>
+            <p>
+              <code>FunctionalAction</code>, <code>ActivityAction</code>, <code>ActivityFlow</code> and <code>ActivityFlowKind</code> are removed. A step of a <code>FunctionalFlow</code> subsets the function it performs (<code>action step :&gt; fnX;</code>); control flow is a native <code>succession</code> and object flow a native <code>flow</code>.
+            </p>
+          </article>
+        </div>
+        <h3>Added</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Rules</small>
+            <h2>Logical to implementation is an allocation</h2>
+            <p>
+              <code>CR-ONT-105</code>: a logical component is the target of <code>realizes</code> only from another logical component. Logical to implementation is <code>allocation : RealizedBy</code>.
+            </p>
+          </article>
+        </div>
+        <div class="section-title">
           <h2>0.20.0</h2>
         </div>
         <h3>Breaking</h3>
@@ -121,6 +144,19 @@
       <section class="technical-section" id="memo-tools">
         <div class="section-title">
           <p class="eyebrow">Tools &middot; <code>@memoarchitect/tools</code></p>
+          <h2>0.21.0</h2>
+        </div>
+        <h3>Breaking</h3>
+        <div class="detail-grid">
+          <article>
+            <small>Ontology</small>
+            <h2>Follows the ontology</h2>
+            <p>
+              A model that types an element by <code>FunctionalAction</code>, <code>ActivityAction</code> or <code>ActivityFlow</code> fails to compile.
+            </p>
+          </article>
+        </div>
+        <div class="section-title">
           <h2>0.20.0</h2>
         </div>
         <h3>Breaking</h3>
